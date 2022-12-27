@@ -33,18 +33,18 @@ export default function Home() {
           <FontAwesomeIcon icon={faDownload} />
         </button>
       </div>
-      <div id="Projects" className="flex flex-col px-32 items-center h-screen justify-center">
+      <div id="Projects" className="flex flex-col text-center px-4 lg:px-32 items-center min-h-screen justify-center py-8">
         <h1 className="text-4xl font-semibold mb-4">Some of my Projects</h1>
         <p className="mb-12">I'm proud of these projects, take a look :D</p>
-        <div className="flex py-8 gap-4 h-half items-center flex-wrap justify-center w-full">
+        <div className="flex py-8 lg:gap-4 h-half items-center flex-wrap justify-center w-full">
           <Project />
         </div>
       </div>
-      <div id="YouTube" className="flex flex-col justify-center items-center h-screen bg-slate-100">
+      <div id="YouTube" className="flex flex-col justify-center items-center min-h-screen bg-slate-100 text-center py-8">
         <h1 
           onClick={() => window.open('https://youtube.com/@Achalogy', '_blank')}
           className="text-4xl font-semibold mb-20 cursor-pointer hover:text-red-500">My Youtube Channel <FontAwesomeIcon color="red" icon={faYoutube} /></h1>
-        <div className="flex flex-row w-full justify-center gap-5 px-20">
+        <div className="flex flex-row w-full justify-center gap-5 px-20 flex-wrap">
           {videos.map(video => 
             <Video title={video.title} key={video.video} video={video.video} />
           )}
