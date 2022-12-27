@@ -18,8 +18,8 @@ export default function Home() {
       video: "https://youtu.be/0GTOxd0bSwk"
     },
     {
-      title: "Advent Js 2022 | 7: Haciendo inventario de regalos",
-      video: "https://youtu.be/aRxTAaMZhvA"
+      title: "Advent Js 2022 | 8: ¡Necesitamos un mecánico!",
+      video: "https://youtu.be/QGjEV-GvmKI"
     }
   ]
 
