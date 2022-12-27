@@ -33,10 +33,10 @@ export default function Home() {
           <FontAwesomeIcon icon={faDownload} />
         </button>
       </div>
-      <div id="Projects" className="flex flex-col text-center px-4 lg:px-32 items-center min-h-screen justify-center py-8">
+      <div id="Projects" className="flex flex-col text-center px-4 lg:px-32 items-center justify-center py-8 min-h-screen">
         <h1 className="text-4xl font-semibold mb-4">Some of my Projects</h1>
         <p className="mb-12">I'm proud of these projects, take a look :D</p>
-        <div className="flex py-8 lg:gap-4 h-half items-center flex-wrap justify-center w-full">
+        <div className="flex p-12 gap-10 items-center flex-wrap justify-center w-full">
           <Project />
         </div>
       </div>
@@ -44,7 +44,7 @@ export default function Home() {
         <h1 
           onClick={() => window.open('https://youtube.com/@Achalogy', '_blank')}
           className="text-4xl font-semibold mb-20 cursor-pointer hover:text-red-500">My Youtube Channel <FontAwesomeIcon color="red" icon={faYoutube} /></h1>
-        <div className="flex flex-row w-full justify-center gap-5 px-20 flex-wrap">
+        <div className="flex flex-row w-full justify-center gap-5 px-15 flex-wrap">
           {videos.map(video => 
             <Video title={video.title} key={video.video} video={video.video} />
           )}

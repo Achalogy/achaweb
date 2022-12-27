@@ -7,7 +7,7 @@ export default function MainLayout({ children }: any) {
 
   return(
     <>
-      <header className="drop-shadow-sm bg-white py-5 px-16 flex flex-row justify-between">
+      <header className="drop-shadow-sm bg-white py-5 lg:px-16 flex flex-row justify-center lg:justify-between">
         <a className="text-2xl hidden lg:inline" href="/#Achalogy">{"</Achalogy"}</a>
         <div className="flex flex-row gap-8 items-center">
           {menus.map(menu => 
