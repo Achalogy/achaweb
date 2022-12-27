@@ -1,9 +1,28 @@
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Project from "../src/components/project";
+import Video from "../src/components/video";
 import MainLayout from "../src/layouts/main-layout";
 
 export default function Home() {
+
+    // Pronto Backend o alguna forma de fetchear los videos
+  const videos = [
+    {
+      title: "Advent Js 2022 | 5: Optimizando viajes de Santa",
+      video: "https://youtu.be/BcpHWwe0ZIE"
+    },
+    {
+      title: "Advent Js 2022 | 6: Creando adornos navideños",
+      video: "https://youtu.be/-d93s9GGr0I"
+    },
+    {
+      title: "Advent Js 2022 | 7: Haciendo inventario de regalos",
+      video: "https://youtu.be/aRxTAaMZhvA"
+    }
+  ]
+
   return(
     <MainLayout>
       <div id="Achalogy" className="flex flex-col gap-3 justify-center items-center h-screen">
@@ -19,6 +38,16 @@ export default function Home() {
         <p className="mb-12">I'm proud of these projects, take a look :D</p>
         <div className="flex py-8 gap-4 h-half items-center flex-wrap justify-center w-full">
           <Project />
+        </div>
+      </div>
+      <div id="YouTube" className="flex flex-col justify-center items-center h-screen bg-slate-100">
+        <h1 
+          onClick={() => window.open('https://youtube.com/@Achalogy', '_blank')}
+          className="text-4xl font-semibold mb-20 cursor-pointer hover:text-red-500">My Youtube Channel <FontAwesomeIcon color="red" icon={faYoutube} /></h1>
+        <div className="flex flex-row w-full justify-center gap-5 px-20">
+          {videos.map(video => 
+            <Video title={video.title} key={video.video} video={video.video} />
+          )}
         </div>
       </div>
     </MainLayout>
