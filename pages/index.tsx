@@ -14,8 +14,8 @@ export default function Home() {
       video: "https://youtu.be/BcpHWwe0ZIE"
     },
     {
-      title: "Advent Js 2022 | 6: Creando adornos navideños",
-      video: "https://youtu.be/-d93s9GGr0I"
+      title: "El PowerPoint para Desarrolladores: Marpit",
+      video: "https://youtu.be/0GTOxd0bSwk"
     },
     {
       title: "Advent Js 2022 | 7: Haciendo inventario de regalos",
