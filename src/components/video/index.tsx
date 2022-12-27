@@ -6,7 +6,7 @@ export default function Video({ title, video }: {title: string, video: string}) 
   return(
     <div
       onClick={() => window.open(video, '_blank')}
-      className="w-full lg:w-1/4 bg-white rounded-lg drop-shadow-md cursor-pointer hover:brightness-110">
+      className="w-10/12 lg:w-1/4 bg-white rounded-lg drop-shadow-md cursor-pointer hover:brightness-110">
       <div className="aspect-video bg-gray-300 relative overflow-hidden">
         <Image src={miniature} fill alt={title}/>
       </div>

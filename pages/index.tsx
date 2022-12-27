@@ -38,6 +38,8 @@ export default function Home() {
         <p className="mb-12">I'm proud of these projects, take a look :D</p>
         <div className="flex p-12 gap-10 items-center flex-wrap justify-center w-full">
           <Project />
+          <Project />
+          <Project />
         </div>
       </div>
       <div id="YouTube" className="flex flex-col justify-center items-center min-h-screen bg-slate-100 text-center py-8">
