@@ -3,7 +3,7 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Project from "../src/components/project";
 import Video from "../src/components/video";
-import MainLayout from "../src/layouts/main-layout";
+import MainLayout from "../src/layouts/main.layout";
 
 export default function Home() {
 
