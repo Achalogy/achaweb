@@ -25,7 +25,12 @@ const RenderResults = ({ searchText }: { searchText: any }) => {
           <div
             className={`h-12 py-0 px-5 flex flex-row justify-between ${active ? 'bg-zinc-100' : 'bg-transparent'} box-border items-center`}
           >
-            <p className='font-medium'>{item.name}</p>
+            <p className='font-medium' style={{
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              width: "90%"
+            }}>{item.name}</p>
             {
               item.shortcut && <span className='bg-zinc-200 h-8 w-6 flex justify-center items-center rounded-sm font-semibold'>{item.shortcut}</span>
             }
