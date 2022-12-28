@@ -4,12 +4,12 @@ import { KBarPortal } from 'kbar/lib/KBarPortal'
 import { KBarPositioner } from 'kbar/lib/KBarPositioner'
 import { KBarAnimator } from 'kbar/lib/KBarAnimator'
 import { KBarSearch } from 'kbar/lib/KBarSearch'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import getMyVideos from '../src/youtubeApi/getMyVideos'
 import RenderResults from '../src/components/renderKbar'
 
-export default function App({ Component, pageProps, videos }: any) {
+export default function App({ Component, pageProps, videos, _videos }: any) {
   const [searchText, setSearchText] = useState("")
   const router = useRouter()
   let actions: any   = [
@@ -55,6 +55,10 @@ export default function App({ Component, pageProps, videos }: any) {
     return v
   }))
 
+  useEffect(() => {
+    localStorage.setItem("@videos", JSON.stringify(_videos))
+  }, [])
+
   return <KBarProvider actions={actions}>
     <KBarPortal>
       <KBarPositioner>
@@ -70,7 +74,8 @@ export default function App({ Component, pageProps, videos }: any) {
 }
 
 App.getInitialProps = async () => {
-  let videos = (await getMyVideos()).map((v: any) => {
+  let _videos = (await getMyVideos())
+  let videos = _videos.map((v: any) => {
       return {
         id: v.id,
         name: v.title,
@@ -80,5 +85,5 @@ App.getInitialProps = async () => {
       }
     })
 
-  return {videos: videos}
+  return {videos: videos, _videos: _videos}
 }

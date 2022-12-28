@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Video from "../../interfaces/Video";
 
-export default function Video({ title, video }: {title: string, video: string}) {
-  let miniature = `https://i.ytimg.com/vi/${video.split("/").at(-1)}/maxresdefault.jpg`
+export default function VideoComponent({ title, video, id }: Video) {
+  let miniature = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
 
   return(
     <div
