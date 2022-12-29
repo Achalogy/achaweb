@@ -6,11 +6,13 @@ import { KBarAnimator } from 'kbar/lib/KBarAnimator'
 import { KBarSearch } from 'kbar/lib/KBarSearch'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import getMyVideos from '../src/youtubeApi/getMyVideos'
+import getMyVideos from '../src/api/youtube/getMyVideos'
 import RenderResults from '../src/components/renderKbar'
+import getBlogList from '../src/api/blog/getBlogList'
+import Blog from '../src/interfaces/Blog'
 export { reportWebVitals } from 'next-axiom';
 
-export default function App({ Component, pageProps, videos, _videos }: any) {
+export default function App({ Component, pageProps, videos, _videos, blogs }: any) {
   const [searchText, setSearchText] = useState("")
   const router = useRouter()
   let actions: any   = [
@@ -44,10 +46,10 @@ export default function App({ Component, pageProps, videos, _videos }: any) {
       },
       {
         id: "youtubevids",
-        name: "Recommended YouTube Videos",
-        perform: () => router.push("/#YouTube"),
+        name: "YouTube",
+        perform: () => window.open("https://youtube.com/@Achalogy", "_blank"),
         shortcut: ["y"],
-        section: "YouTube"
+        section: "Go to"
       }
     ]
 
@@ -56,11 +58,24 @@ export default function App({ Component, pageProps, videos, _videos }: any) {
     return v
   }))
 
+  actions = actions.concat(blogs.map((blog: Blog) => {
+    return({
+      id: blog.id,
+      name: blog.title,
+      perform: () => router.push(`/blog/${blog.id}`),
+      section: "Blog",
+      onlyOnSearch: true,
+      isBlog: true
+    })
+  }))
+
   useEffect(() => {
     localStorage.setItem("@videos", JSON.stringify(_videos))
   }, [])
 
-  return <KBarProvider actions={actions}>
+  return <KBarProvider actions={actions} options={{
+    disableScrollbarManagement: true,
+  }}>
     <KBarPortal>
       <KBarPositioner>
         <KBarAnimator className='w-1/3 rounded-lg overflow-hidden drop-shadow-2xl bg-white'>
@@ -70,7 +85,7 @@ export default function App({ Component, pageProps, videos, _videos }: any) {
       </KBarPositioner>
     </KBarPortal>
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet"></link>
-    <Component {...pageProps} />
+    <Component {...pageProps} videos={_videos} blogs={blogs} />
   </KBarProvider>
 }
 
@@ -86,5 +101,5 @@ App.getInitialProps = async () => {
       }
     })
 
-  return {videos: await videos, _videos: _videos}
+  return {videos: await videos, _videos: _videos, blogs: await getBlogList()}
 }

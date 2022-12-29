@@ -9,6 +9,12 @@ import MainLayout from "../src/layouts/main.layout";
 
 export default function Home() {
   
+  useEffect(() => {
+    let body = document.body
+    let hasVerticalScrollbar = body.scrollHeight > body.clientHeight;
+    if(!hasVerticalScrollbar) body.style.cssText = 'margin: 0 !important;'
+  }, [])
+
   const [videos, setVideos]: Video[] | any[] = useState()
   
   useEffect(() => {
