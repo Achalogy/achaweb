@@ -20,7 +20,7 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
         id: "blog",
         name: "Blog",
         shortcut: ["b"],
-        perform: () => router.push("blog"),
+        perform: () => router.push("/blog"),
         section: 'Go to'
       },
       {
