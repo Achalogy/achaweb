@@ -62,7 +62,7 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
     return({
       id: blog.id,
       name: blog.title,
-      perform: () => router.push(`/blog/${blog.id}`),
+      perform: () => router.push(`/blog/${(blog.id).split(".")[0]}`),
       section: "Blog",
       onlyOnSearch: true,
       isBlog: true
