@@ -38,7 +38,7 @@ export default function BlogPage({videos, blogs}:any) {
             <h1 className="mb-4 font-semibold text-lg">Recent Posts</h1>
             <div className="flex flex-col py-6 px-2 gap-2">
               {blogs && blogs.map((blog: Blog) => 
-                <BlogListed {...blog} />
+                <BlogListed key={blog.id} {...blog} />
               )}
             </div>
         </div>

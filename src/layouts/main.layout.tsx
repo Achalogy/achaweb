@@ -11,7 +11,7 @@ export default function MainLayout({ children }: any) {
         <a className="text-2xl hidden lg:inline" href="/#Achalogy">{"</Achalogy"}</a>
         <div className="flex flex-row gap-8 items-center">
           {menus.map(menu => 
-            <a id={menu[1]} href={`${menu[1]}`} className="font-medium text-lg">{menu[0]}</a>
+            <a key={menu[1]} id={menu[1]} href={`${menu[1]}`} className="font-medium text-lg">{menu[0]}</a>
           )}
         </div>
       </header>

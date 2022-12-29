@@ -22,7 +22,7 @@ const BlogListed = ({id, title, date, description, tags}: Blog) => {
     <div className="flex flex-row items-center gap-6 lg:justify-end w-full lg:w-2/6">
       <div className="flex flex-row items-center gap-2 flex-wrap">
         {tags && tags.map(x => 
-          <p className={`py-1 px-3 border rounded-full text-xs ${tagColors[x]}`}>{x}</p>
+          <p key={x} className={`py-1 px-3 border rounded-full text-xs ${tagColors[x]}`}>{x}</p>
         )}
       </div>
       <FontAwesomeIcon icon={faChevronRight} className="hidden lg:flex"/>
