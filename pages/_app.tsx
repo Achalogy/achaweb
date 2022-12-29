@@ -76,7 +76,7 @@ export default function App({ Component, pageProps, videos, _videos }: any) {
 
 App.getInitialProps = async () => {
   let _videos = (await getMyVideos())
-  let videos = _videos.map((v: any) => {
+  let videos = await _videos.map((v: any) => {
       return {
         id: v.id,
         name: v.title,
@@ -86,5 +86,5 @@ App.getInitialProps = async () => {
       }
     })
 
-  return {videos: videos, _videos: _videos}
+  return {videos: await videos, _videos: _videos}
 }
