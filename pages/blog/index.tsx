@@ -12,8 +12,8 @@ export default function BlogPage({videos, blogs}:any) {
   return (
     <BlogLayout>
       <title>AchaBlog</title>
-      <div style={{flex: 1}} className="flex flex-row justify-center px-12 gap-10">
-        <div className="w-3/12 p-4 flex flex-col justify-between">
+      <div style={{flex: 1}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-12 gap-10">
+        <div className="lg:w-3/12 p-4 flex flex-col justify-between">
           <div>
             <h1 className="mb-4 font-semibold text-lg">Recent Videos</h1>
             <div className="flex flex-col gap-4">
@@ -30,11 +30,11 @@ export default function BlogPage({videos, blogs}:any) {
             )}
             </div>
           </div>
-          <footer className="text-xs text-zinc-300 flex flex-row gap-4">
+          <footer className="text-xs text-zinc-300 hidden lg:flex flex-row gap-4">
             <p>© Achalogy 2023</p>
           </footer>
         </div>
-        <div className="w-6/12 p-4">
+        <div className="lg:w-6/12 p-4">
             <h1 className="mb-4 font-semibold text-lg">Recent Posts</h1>
             <div className="flex flex-col py-6 px-2 gap-2">
               {blogs && blogs.map((blog: Blog) => 

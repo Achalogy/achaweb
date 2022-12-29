@@ -14,18 +14,18 @@ const BlogListed = ({id, title, date, description, tags}: Blog) => {
     express: `text-emerald-600 bg-emerald-50 border-emerald-200`
   }
 
-  return <div className="flex flex-row justify-between items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer">
+  return <div className="flex flex-col lg:flex-row justify-between lg:items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer gap-2 lg:gap-0">
     <div>
-      <h1 className="font-semibold">{title}</h1>
-      <p>{date}</p>
+      <h1 className="font-semibold text-sm lg:text-md">{title}</h1>
+      <p className="text-xs text-zinc-400">{date}</p>
     </div>
-    <div className="flex flex-row items-center gap-6 justify-end w-2/6">
-      <div className="flex flex-row items-center max-w-lg gap-2 flex-wrap">
+    <div className="flex flex-row items-center gap-6 lg:justify-end w-full lg:w-2/6">
+      <div className="flex flex-row items-center gap-2 flex-wrap">
         {tags && tags.map(x => 
           <p className={`py-1 px-3 border rounded-full text-xs ${tagColors[x]}`}>{x}</p>
         )}
       </div>
-      <FontAwesomeIcon icon={faChevronRight} />
+      <FontAwesomeIcon icon={faChevronRight} className="hidden lg:flex"/>
     </div>
   </div>
 }
