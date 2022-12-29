@@ -24,7 +24,7 @@ export default function App({ Component, pageProps, videos, _videos }: any) {
         id: "home",
         name: "Home",
         shortcut: ["h"],
-        perform: () => (window.location.pathname = "/"),
+        perform: () => router.push("/"),
         section: 'Go to'
       },
       {
