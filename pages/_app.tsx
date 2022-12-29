@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import getMyVideos from '../src/youtubeApi/getMyVideos'
 import RenderResults from '../src/components/renderKbar'
+export { reportWebVitals } from 'next-axiom';
 
 export default function App({ Component, pageProps, videos, _videos }: any) {
   const [searchText, setSearchText] = useState("")
