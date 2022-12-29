@@ -64,7 +64,7 @@ export default function App({ Component, pageProps, videos, _videos }: any) {
     <KBarPortal>
       <KBarPositioner>
         <KBarAnimator className='w-1/3 rounded-lg overflow-hidden drop-shadow-2xl bg-white'>
-          <KBarSearch onChange={(test) => setSearchText(test.target.value)} value={searchText} className='border-none outline-none p-4 bg-white text-black w-full text-xl'/>
+          <KBarSearch onFocus={() => setSearchText('')}  onChange={(test) => setSearchText(test.target.value)} value={searchText} className='border-none outline-none p-4 bg-white text-black w-full text-xl'/>
           <RenderResults searchText={searchText} />
         </KBarAnimator>
       </KBarPositioner>
