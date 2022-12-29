@@ -19,6 +19,7 @@ export default function Home() {
 
   return(
     <MainLayout>
+      <title>Achalogy</title>
       <div id="Achalogy" className="flex flex-col gap-3 justify-center items-center h-screen">
         <h1 className="text-6xl font-normal">Achalogy</h1>
         <p className="text-gray-400 line tracking-widest text-2xl">Software Developer</p>
