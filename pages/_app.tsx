@@ -24,14 +24,14 @@ export default function App({ Component, pageProps, videos, _videos }: any) {
         id: "home",
         name: "Home",
         shortcut: ["h"],
-        perform: () => router.push("/"),
+        perform: () => (window.location.pathname = "/"),
         section: 'Go to'
       },
       {
         id: "projects",
         name: "My Top Projects",
         shortcut: ["p"],
-        perform: () => router.push("/#Projects"),
+        perform: () =>  router.push("/#Projects"),
         section: 'Projects'
       },
       {
