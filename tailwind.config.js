@@ -20,6 +20,10 @@ module.exports = {
           700: '#343953',
           800: '#2A2E43',
           900: '#1F2232'
+        },
+        codeHighlight: {
+          "dark": '#f4f4f510',
+          "light": "#f4f4f5"
         }
       },
     },

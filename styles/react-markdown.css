@@ -27,7 +27,11 @@
 }
 
 .react-markdown p {
-  @apply flex flex-row
+  @apply flex flex-row items-center
+}
+
+.react-markdown p code {
+  @apply mx-1 px-1 rounded-sm bg-codeHighlight-light dark:bg-codeHighlight-dark
 }
 
 .react-markdown img {
