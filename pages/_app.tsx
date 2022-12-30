@@ -74,7 +74,6 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
     localStorage.setItem("@videos", JSON.stringify(_videos))
     localStorage.setItem("@blogs", JSON.stringify(blogs))
     let theme = localStorage.getItem("theme")
-    console.log(theme)
     if (theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark')
       document.body.style.backgroundColor = "#1F2232"
@@ -94,7 +93,7 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
       <KBarPortal>
         <KBarPositioner>
           <KBarAnimator className='w-1/3 rounded-lg overflow-hidden drop-shadow-2xl bg-white dark:bg-darkMode-900'>
-            <KBarSearch onFocus={() => setSearchText('')}  onChange={(test) => setSearchText(test.target.value)} value={searchText} className='border-none outline-none p-4 bg-white dark:bg-darkMode-800 text-black w-full text-xl'/>
+            <KBarSearch onFocus={() => setSearchText('')}  onChange={(test) => setSearchText(test.target.value)} value={searchText} className='border-none outline-none p-4 bg-white dark:bg-darkMode-800 dark:text-white text-black w-full text-xl'/>
             <RenderResults searchText={searchText} />
           </KBarAnimator>
         </KBarPositioner>
