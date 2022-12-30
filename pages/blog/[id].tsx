@@ -12,7 +12,7 @@ import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
 import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown'
 import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
 import rangeParser from 'parse-numeric-range'
-import oneDark from "react-syntax-highlighter/dist/esm/styles/prism/one-dark";
+import nord from "react-syntax-highlighter/dist/cjs/styles/prism/nord";
 
 SyntaxHighlighter.registerLanguage('tsx', tsx)
 SyntaxHighlighter.registerLanguage('typescript', typescript)
@@ -33,10 +33,9 @@ export default function BlogPost({ blog, info }: any) {
         if (hasMeta) {
           const RE = /{([\d,-]+)}/
           const metadata = node.data.meta?.replace(/\s/g, '')
-          const strlineNumbers = RE?.test(metadata)
-            ? RE.exec(metadata)[1]
-            : '0'
-          const highlightLines = rangeParser(strlineNumbers)
+          const strlineNumbers: any = RE?.test(metadata)
+            ? RE.exec(metadata) : '0'
+          const highlightLines = rangeParser(strlineNumbers[1] ?? '0')
           const highlight = highlightLines
           const data: string = highlight.includes(applyHighlights)
             ? 'highlight'
@@ -49,7 +48,7 @@ export default function BlogPost({ blog, info }: any) {
 
       return match ? (
         <SyntaxHighlighter
-          style={oneDark}
+          style={nord}
           language={match[1]}
           PreTag="div"
           className="codeStyle"
