@@ -27,4 +27,16 @@ button {
   cursor: pointer;
 }
 
-::-webkit-scrollbar {display:none;}
+body::-webkit-scrollbar {display:none;}
+
+::-webkit-scrollbar {
+  height: .25em !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-zinc-600
+}

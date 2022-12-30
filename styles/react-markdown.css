@@ -37,3 +37,12 @@
 .react-markdown img {
   @apply self-center w-2/3 my-4
 }
+
+@font-face {
+  font-family: "Hack";
+  src: url('../assets/Hack-Regular.ttf');
+}
+
+.react-markdown code, .react-markdown code span {
+  font-family: "Hack", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
