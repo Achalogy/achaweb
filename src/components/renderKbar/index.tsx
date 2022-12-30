@@ -29,19 +29,19 @@ const RenderResults = ({ searchText }: { searchText: any }) => {
       onRender={({ item, active }: {item: any, active: any}) => {
 
         return typeof item === "string" ? (
-          <div className='p-2 py-0 text-sm text-zinc-700'>{item}</div>
+          <div className='p-2 py-0 text-sm text-zinc-700 dark:text-zinc-400'>{item}</div>
         ) : (
           <div
-            className={`h-12 py-0 px-5 flex flex-row justify-between ${active ? 'bg-zinc-100' : 'bg-transparent'} box-border items-center`}
+            className={`h-12 py-0 px-5 flex flex-row justify-between ${active ? 'bg-zinc-100 dark:bg-darkMode-800' : 'bg-transparent'} box-border items-center`}
           >
-            <p className='font-medium' style={{
+            <p className='font-medium dark:text-white' style={{
               whiteSpace: "nowrap",
               overflow: "hidden",
               textOverflow: "ellipsis",
               width: "90%"
             }}>{item.name}</p>
             {
-              item.shortcut && <span className='bg-zinc-200 h-8 w-6 flex justify-center items-center rounded-sm font-semibold'>{item.shortcut}</span>
+              item.shortcut && <span className='bg-zinc-200 dark:bg-darkMode-600 dark:text-white h-8 w-6 flex justify-center items-center rounded-md font-semibold'>{item.shortcut}</span>
             }
             {
               item.isVideo && <FontAwesomeIcon icon={faYoutube} color="red" />

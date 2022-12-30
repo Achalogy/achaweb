@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -10,7 +11,17 @@ module.exports = {
         'half': '50vh',
         '80vh': '80vh',
         '40vh': '40vh'
-      }
+      },
+      colors: {
+        darkMode: {
+          400: '#535C85',
+          500: '#495174',
+          600: '#3E4564',
+          700: '#343953',
+          800: '#2A2E43',
+          900: '#1F2232'
+        }
+      },
     },
   },
   plugins: [],

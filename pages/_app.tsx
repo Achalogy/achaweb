@@ -11,6 +11,7 @@ import RenderResults from '../src/components/renderKbar'
 import getBlogList from '../src/api/blog/getBlogList'
 import Blog from '../src/interfaces/Blog'
 export { reportWebVitals } from 'next-axiom';
+import Script from 'next/script'
 
 export default function App({ Component, pageProps, videos, _videos, blogs }: any) {
   const [searchText, setSearchText] = useState("")
@@ -71,22 +72,38 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
 
   useEffect(() => {
     localStorage.setItem("@videos", JSON.stringify(_videos))
+    localStorage.setItem("@blogs", JSON.stringify(blogs))
+    let theme = localStorage.getItem("theme")
+    console.log(theme)
+    if (theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      document.body.style.backgroundColor = "#1F2232"
+    } else {
+      document.documentElement.classList.remove('dark')
+      document.body.style.backgroundColor = "#fff"
+    }
   }, [])
 
-  return <KBarProvider actions={actions} options={{
-    disableScrollbarManagement: true,
-  }}>
-    <KBarPortal>
-      <KBarPositioner>
-        <KBarAnimator className='w-1/3 rounded-lg overflow-hidden drop-shadow-2xl bg-white'>
-          <KBarSearch onFocus={() => setSearchText('')}  onChange={(test) => setSearchText(test.target.value)} value={searchText} className='border-none outline-none p-4 bg-white text-black w-full text-xl'/>
-          <RenderResults searchText={searchText} />
-        </KBarAnimator>
-      </KBarPositioner>
-    </KBarPortal>
-    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet"></link>
-    <Component {...pageProps} videos={_videos} blogs={blogs} />
-  </KBarProvider>
+  return <>
+  
+    <Script src="/theme.js" strategy="beforeInteractive" />
+    <KBarProvider actions={actions} options={{
+      disableScrollbarManagement: true,
+    }}>
+      
+      <KBarPortal>
+        <KBarPositioner>
+          <KBarAnimator className='w-1/3 rounded-lg overflow-hidden drop-shadow-2xl bg-white dark:bg-darkMode-900'>
+            <KBarSearch onFocus={() => setSearchText('')}  onChange={(test) => setSearchText(test.target.value)} value={searchText} className='border-none outline-none p-4 bg-white dark:bg-darkMode-800 text-black w-full text-xl'/>
+            <RenderResults searchText={searchText} />
+          </KBarAnimator>
+        </KBarPositioner>
+      </KBarPortal>
+      <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet"></link>
+      <Component {...pageProps} videos={_videos} blogs={blogs} />
+    </KBarProvider>
+  
+  </>
 }
 
 App.getInitialProps = async () => {

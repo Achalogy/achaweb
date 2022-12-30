@@ -15,17 +15,17 @@ export default function BlogPage({videos, blogs}:any) {
       <div style={{flex: 1}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-12 gap-10">
         <div className="lg:w-3/12 p-4 flex flex-col justify-between">
           <div>
-            <h1 className="mb-4 font-semibold text-lg">Recent Videos</h1>
+            <h1 className="mb-4 font-semibold text-lg dark:text-white">Recent Videos</h1>
             <div className="flex flex-col gap-4">
               {videos && videos.slice(0, 5).map((video: Video) => 
-              <div onClick={() => window.open(video.video, '_blank')} className="flex flex-row items-center cursor-pointer p-3 bg-white hover:bg-zinc-50 justify-between px-4 rounded-md">
+              <div onClick={() => window.open(video.video, '_blank')} className="flex flex-row items-center cursor-pointer p-3 bg-white dark:bg-darkMode-800 hover:bg-zinc-50 dark:hover:bg-darkMode-700 justify-between px-4 rounded-md">
                 <FontAwesomeIcon icon={faYoutube} className="text-sm" color="red" />
                 <p style={{
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 width: "90%"
-              }} className="font-medium">{video.title}</p>
+              }} className="font-medium dark:text-white">{video.title}</p>
               </div>
             )}
             </div>
@@ -35,7 +35,7 @@ export default function BlogPage({videos, blogs}:any) {
           </footer>
         </div>
         <div className="lg:w-6/12 p-4">
-            <h1 className="mb-4 font-semibold text-lg">Recent Posts</h1>
+            <h1 className="mb-4 font-semibold text-lg dark:text-white">Recent Posts</h1>
             <div className="flex flex-col py-6 px-2 gap-2">
               {blogs && blogs.map((blog: Blog) => 
                 <BlogListed key={blog.id} {...blog} />

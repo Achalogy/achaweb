@@ -14,18 +14,20 @@ const BlogListed = ({id, title, date, description, tags}: Blog) => {
     express: `text-emerald-600 bg-emerald-50 border-emerald-200`
   }
 
-  return <div className="flex flex-col lg:flex-row justify-between lg:items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer gap-2 lg:gap-0">
+  tags = ["node", "css", "typescript"]
+
+  return <div className="flex flex-col lg:flex-row justify-between lg:items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer gap-2 lg:gap-0 dark:bg-darkMode-800">
     <div>
-      <h1 className="font-semibold text-sm lg:text-md">{title}</h1>
+      <h1 className="font-semibold text-sm lg:text-md dark:text-white">{title}</h1>
       <p className="text-xs text-zinc-400">{date}</p>
     </div>
-    <div className="flex flex-row items-center gap-6 lg:justify-end w-full lg:w-2/6">
-      <div className="flex flex-row items-center gap-2 flex-wrap">
+    <div className="flex flex-row items-center gap-6 lg:justify-end">
+      <div className="flex flex-row items-center dark:gap-0 gap-2 gap-y-0 flex-wrap justify-center">
         {tags && tags.map(x => 
-          <p key={x} className={`py-1 px-3 border rounded-full text-xs ${tagColors[x]}`}>{x}</p>
+          <p key={x} className={`py-1 px-3 border rounded-full text-xs ${tagColors[x]} dark:bg-transparent dark:border-none`}>{x}</p>
         )}
       </div>
-      <FontAwesomeIcon icon={faChevronRight} className="hidden lg:flex"/>
+      <FontAwesomeIcon icon={faChevronRight} className="hidden lg:flex dark:text-zinc-200 mr-2"/>
     </div>
   </div>
 }
