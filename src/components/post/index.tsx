@@ -16,7 +16,7 @@ const BlogListed = ({id, title, date, description, tags}: Blog) => {
 
   tags = ["node", "css", "typescript"]
 
-  return <div className="flex flex-col lg:flex-row justify-between lg:items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer gap-2 lg:gap-0 dark:bg-darkMode-800">
+  return <div className="flex flex-col lg:flex-row justify-between lg:items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer gap-2 lg:gap-0 dark:bg-darkMode-900 dark:drop-shadow-md dark:hover:bg-darkMode-800 dark:brightness-105">
     <div>
       <h1 className="font-semibold text-sm lg:text-md dark:text-white">{title}</h1>
       <p className="text-xs text-zinc-400">{date}</p>

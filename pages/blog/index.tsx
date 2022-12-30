@@ -12,13 +12,13 @@ export default function BlogPage({videos, blogs}:any) {
   return (
     <BlogLayout>
       <title>AchaBlog</title>
-      <div style={{flex: 1}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-12 gap-10">
+      <div style={{flex: 1}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-8 gap-10">
         <div className="lg:w-3/12 p-4 flex flex-col justify-between">
           <div>
             <h1 className="mb-4 font-semibold text-lg dark:text-white">Recent Videos</h1>
             <div className="flex flex-col gap-4">
               {videos && videos.slice(0, 5).map((video: Video) => 
-              <div onClick={() => window.open(video.video, '_blank')} className="flex flex-row items-center cursor-pointer p-3 bg-white dark:bg-darkMode-800 hover:bg-zinc-50 dark:hover:bg-darkMode-700 justify-between px-4 rounded-md">
+              <div onClick={() => window.open(video.video, '_blank')} className="flex flex-row items-center cursor-pointer p-3 bg-white dark:bg-darkMode-900 hover:bg-zinc-50 dark:hover:bg-darkMode-800 justify-between px-4 rounded-md dark:drop-shadow-md dark:brightness-105">
                 <FontAwesomeIcon icon={faYoutube} className="text-sm" color="red" />
                 <p style={{
                 whiteSpace: "nowrap",
