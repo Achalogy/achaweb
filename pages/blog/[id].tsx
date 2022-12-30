@@ -69,11 +69,11 @@ export default function BlogPost({ blog, info }: any) {
   return(
     <BlogLayout>
       <div className="flex flex-col items-center">
-        <div className="border-b border-zinc-500 flex flex-col items-center mb-4 w-7/12">
+        <div className="lg:border-b border-zinc-500 flex flex-col text-xs lg:items-center mb-4 w-full px-4 lg:px-0 lg:w-7/12">
           <h1 className="mt-4 text-4xl font-semibold dark:text-white">{info.title}</h1>
           <p className="dark:text-zinc-400 mb-3">{new Date(info.date).toLocaleDateString(undefined, options)}</p>
         </div>
-        <div className="flex flex-col react-markdown w-6/12">
+        <div className="flex flex-col react-markdown w-full px-6 lg:px-0 lg:w-6/12">
           <ReactMarkdown children={blog} remarkPlugins={[remarkGfm]} components={MarkdownComponents} />
         </div>
       </div>
