@@ -51,6 +51,18 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
         perform: () => window.open("https://youtube.com/@Achalogy", "_blank"),
         shortcut: ["y"],
         section: "Go to"
+      },
+      {
+        id: "theme",
+        name: "Change Theme",
+        perform: () => {
+          let theme = localStorage.getItem("theme")
+          let newTheme = theme == "dark" ? "light": "dark"
+          localStorage.setItem("theme", newTheme)
+          router.reload()
+        },
+        shortcut: ["t"],
+        section: "Settings"
       }
     ]
 

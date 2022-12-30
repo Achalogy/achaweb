@@ -11,7 +11,6 @@ const ThemeSwitch = () => {
 
   const changeTheme = () => {
     let newTheme = theme == "dark" ? "light": "dark"
-    console.log(newTheme)
     localStorage.setItem("theme", newTheme)
     setTheme(newTheme)
     router.reload()
