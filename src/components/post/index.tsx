@@ -14,7 +14,9 @@ const BlogListed = ({id, title, date, description, tags}: Blog) => {
     html: `text-orange-600 bg-orange-50 border-orange-200`,
     node: `text-green-600 bg-green-50 border-green-200`,
     typescript: `text-blue-600 bg-blue-50 border-blue-200`,
-    express: `text-emerald-600 bg-emerald-50 border-emerald-200`
+    express: `text-emerald-600 bg-emerald-50 border-emerald-200`,
+    next: `text-stone-600 bg-stone-50 border-stone-200`,
+    sass: `text-pink-600 bg-pink-50 border-pink-200`
   }
 
   tags = ["node", "css", "typescript"]
