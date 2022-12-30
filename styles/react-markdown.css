@@ -27,7 +27,7 @@
 }
 
 .react-markdown p {
-  @apply flex flex-col
+  @apply flex flex-row
 }
 
 .react-markdown img {
