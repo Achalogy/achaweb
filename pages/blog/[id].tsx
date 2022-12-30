@@ -26,6 +26,8 @@ export default function BlogPost({ blog, info }: any) {
   const MarkdownComponents: object = {
     code({ node, inline, className, ...props }: any) {
 
+      props.children = props.children.map((x: any) => x ? x.trim(): x)
+      
       const match = /language-(\w+)/.exec(className || '')
       const hasMeta = node?.data?.meta
 
@@ -35,7 +37,7 @@ export default function BlogPost({ blog, info }: any) {
           const metadata = node.data.meta?.replace(/\s/g, '')
           const strlineNumbers: any = RE?.test(metadata)
             ? RE.exec(metadata) : '0'
-          const highlightLines = rangeParser(strlineNumbers[1] ?? '0')
+          const highlightLines = rangeParser(strlineNumbers ?? '0')
           const highlight = highlightLines
           const data: string = highlight.includes(applyHighlights)
             ? 'highlight'
@@ -55,7 +57,7 @@ export default function BlogPost({ blog, info }: any) {
           showLineNumbers={true}
           wrapLines={hasMeta ? true : false}
           useInlineStyles={true}
-          lineProps={applyHighlights}
+          lineProps={applyHighlights  }
           {...props}
         />
       ) : (
