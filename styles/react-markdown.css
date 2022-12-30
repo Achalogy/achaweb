@@ -1,0 +1,35 @@
+.react-markdown {
+  @apply text-black dark:text-zinc-300
+}
+
+.react-markdown table {
+  @apply self-center
+}
+
+.react-markdown pre {
+  @apply w-full drop-shadow-2xl rounded-sm my-6
+}
+
+.react-markdown pre div, .react-markdown pre div code {
+  background: #2A2E43 !important;
+}
+
+.react-markdown h1 {
+  @apply font-bold text-2xl mt-6
+}
+
+.react-markdown ul {
+  @apply list-disc px-12 mt-4 mb-2
+}
+
+.react-markdown ol {
+  @apply list-decimal px-12 mt-4 mb-2
+}
+
+.react-markdown p {
+  @apply flex flex-col
+}
+
+.react-markdown img {
+  @apply self-center w-2/3 my-4
+}

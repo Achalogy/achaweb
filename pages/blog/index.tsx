@@ -8,8 +8,7 @@ import Blog from "../../src/interfaces/Blog";
 import BlogListed from "../../src/components/post";
 
 export default function BlogPage({videos, blogs}:any) {
-  console.log(blogs)
-  return (
+    return (
     <BlogLayout>
       <title>AchaBlog</title>
       <div style={{flex: 1}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-8 gap-10">
