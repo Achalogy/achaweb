@@ -19,8 +19,6 @@ const BlogListed = ({id, title, date, description, tags}: Blog) => {
     sass: `text-pink-600 bg-pink-50 border-pink-200`
   }
 
-  tags = ["node", "css", "typescript"]
-
   return <div className="flex flex-col lg:flex-row justify-between lg:items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer gap-2 lg:gap-0 dark:bg-darkMode-900 dark:drop-shadow-md dark:hover:bg-darkMode-800 dark:brightness-105"
     onClick={() => router.push(`/blog/${(id).split(".")[0]}`)}
     >
