@@ -3,6 +3,7 @@ import remarkGfm from "remark-gfm";
 import getBlog from "../../src/api/blog/getBlog"
 import getBlogInfo from "../../src/api/blog/getBlogInfo"
 import BlogLayout from "../../src/layouts/blog.layout";
+import Head from 'next/head'
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
@@ -27,7 +28,7 @@ export default function BlogPost({ blog, info }: any) {
     code({ node, inline, className, ...props }: any) {
 
       props.children = props.children.map((x: any) => x ? x.trim(): x)
-      
+
       const match = /language-(\w+)/.exec(className || '')
       const hasMeta = node?.data?.meta
 
@@ -67,8 +68,26 @@ export default function BlogPost({ blog, info }: any) {
   }
   const options: any = { year: 'numeric', month: 'long', day: 'numeric' };  
 
+
+
   return(
     <BlogLayout>
+      <Head>
+        <title>{`${info.title}`}</title>
+        <meta name="description" content={`${info.description}`} />
+
+        <meta itemProp="name" content={`${info.title}`} />
+        <meta itemProp="description" content={`${info.description}`} />
+
+        <meta property="og:url" content={`https://achalogy.ovh/blog/${info.id}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${info.title}`} />
+        <meta property="og:description" content={`${info.description}`} />
+        <meta name="theme-color" content="#FF0000" />
+
+        <meta name="twitter:title" content={`${info.title}`} />
+        <meta name="twitter:description" content={`${info.description}`} />
+      </Head>
       <div className="flex flex-col items-center">
         <div className="lg:border-b border-zinc-500 flex flex-col text-xs lg:items-center mb-4 w-full px-4 lg:px-0 lg:w-7/12">
           <h1 className="mt-4 text-4xl font-semibold dark:text-white">{info.title}</h1>
