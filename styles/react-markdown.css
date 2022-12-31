@@ -1,5 +1,5 @@
 .react-markdown {
-  @apply text-black dark:text-zinc-300
+  @apply text-black dark:text-zinc-300 mb-20 gap-2
 }
 
 .react-markdown table {
@@ -15,7 +15,11 @@
 }
 
 .react-markdown h1 {
-  @apply font-bold text-2xl mt-6
+  @apply font-bold text-3xl mt-6
+}
+
+.react-markdown h2, .react-markdown h2 a {
+  @apply font-semibold text-xl mt-4
 }
 
 .react-markdown ul {
@@ -27,7 +31,11 @@
 }
 
 .react-markdown p {
-  @apply flex flex-row items-center
+  @apply items-center ml-2 leading-6 text-lg tracking-wide
+}
+
+.react-markdown a {
+  @apply text-sky-300
 }
 
 .react-markdown p code {
