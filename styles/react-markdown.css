@@ -30,7 +30,7 @@
   @apply list-decimal px-12 mt-4 mb-2
 }
 
-.react-markdown p {
+.react-markdown p, li{
   @apply items-center ml-2 leading-6 text-lg tracking-wide
 }
 

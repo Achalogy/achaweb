@@ -16,7 +16,8 @@ const BlogListed = ({id, title, date, description, tags}: Blog) => {
     typescript: `text-blue-600 bg-blue-50 border-blue-200`,
     express: `text-emerald-600 bg-emerald-50 border-emerald-200`,
     next: `text-stone-600 bg-stone-50 border-stone-200`,
-    sass: `text-pink-600 bg-pink-50 border-pink-200`
+    sass: `text-pink-600 bg-pink-50 border-pink-200`,
+    torrent: `text-green-600 bg-green-50 border-green-200`
   }
 
   return <div className="flex flex-col lg:flex-row justify-between lg:items-center bg-white hover:bg-zinc-50 p-3 rounded-lg cursor-pointer gap-2 lg:gap-0 dark:bg-darkMode-900 dark:drop-shadow-md dark:hover:bg-darkMode-800 dark:brightness-105"
