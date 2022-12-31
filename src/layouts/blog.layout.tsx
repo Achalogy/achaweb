@@ -1,4 +1,4 @@
-import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeSwitch from "../components/theme";
 
@@ -17,6 +17,7 @@ export default function BlogLayout({children}: { children: any }) {
           <ThemeSwitch />
           <FontAwesomeIcon className="cursor-pointer dark:text-white" icon={faGithub} onClick={() => window.open('https://github.com/achalogy', '_blank')} />
           <FontAwesomeIcon className="cursor-pointer" icon={faYoutube} color="red" onClick={() => window.open('https://youtube.com/@Achalogy', '_blank')} />
+          <FontAwesomeIcon className="cursor-pointer" icon={faTwitter} color="#00ACEE" onClick={() =>  window.open('https://twitter.com/Achalogy')} />
         </div>
       </header>
       {children}
