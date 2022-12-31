@@ -47,7 +47,7 @@
 }
 
 .react-markdown img {
-  @apply self-center w-2/3 my-6
+  @apply self-center w-10/12 lg:w-2/3 my-6
 }
 
 @font-face {
