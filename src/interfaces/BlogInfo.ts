@@ -4,4 +4,5 @@ export default interface BlogInfo {
   date: string;
   description: string;
   tags: string[];
+  image: string;
 }
