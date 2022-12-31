@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Video from "../../src/interfaces/Video";
 import BlogLayout from "../../src/layouts/blog.layout";
 import getBlogList from '../../src/api/blog/getBlogList'
-import Blog from "../../src/interfaces/Blog";
+import Blog from "../../src/interfaces/BlogInfo";
 import BlogListed from "../../src/components/post";
 
 export default function BlogPage({videos, blogs}:any) {

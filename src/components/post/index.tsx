@@ -1,7 +1,7 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/dist/client/router";
-import Blog from "../../interfaces/Blog";
+import Blog from "../../interfaces/BlogInfo";
 
 const BlogListed = ({id, title, date, description, tags}: Blog) => {
 

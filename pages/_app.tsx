@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 import getMyVideos from '../src/api/youtube/getMyVideos'
 import RenderResults from '../src/components/renderKbar'
 import getBlogList from '../src/api/blog/getBlogList'
-import Blog from '../src/interfaces/Blog'
+import Blog from '../src/interfaces/BlogInfo'
 export { reportWebVitals } from 'next-axiom';
 import Script from 'next/script'
 

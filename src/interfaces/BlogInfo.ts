@@ -1,4 +1,4 @@
-export default interface Blog {
+export default interface BlogInfo {
   id: string;
   title: string;
   date: string;

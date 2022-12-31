@@ -3,91 +3,20 @@ import remarkGfm from "remark-gfm";
 import getBlog from "../../src/api/blog/getBlog"
 import getBlogInfo from "../../src/api/blog/getBlogInfo"
 import BlogLayout from "../../src/layouts/blog.layout";
-import Head from 'next/head'
+import BlogSEO from "../../src/components/Blog/SEO";
+import BlogInfo from "../../src/interfaces/BlogInfo";
+import MarkdownComponents from "../../src/components/Blog/MarkdownComponents";
 
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
-import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
-import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss'
-import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
-import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown'
-import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
-import rangeParser from 'parse-numeric-range'
-import nord from "react-syntax-highlighter/dist/cjs/styles/prism/nord";
+export default function BlogPost({ blog, info }: {
+  blog: string,
+  info: BlogInfo
+}) {
 
-SyntaxHighlighter.registerLanguage('tsx', tsx)
-SyntaxHighlighter.registerLanguage('typescript', typescript)
-SyntaxHighlighter.registerLanguage('scss', scss)
-SyntaxHighlighter.registerLanguage('bash', bash)
-SyntaxHighlighter.registerLanguage('markdown', markdown)
-SyntaxHighlighter.registerLanguage('json', json)
-
-export default function BlogPost({ blog, info }: any) {
-
-  const MarkdownComponents: object = {
-    code({ node, inline, className, ...props }: any) {
-
-      props.children = props.children.map((x: any) => x ? x.trim(): x)
-
-      const match = /language-(\w+)/.exec(className || '')
-      const hasMeta = node?.data?.meta
-
-      const applyHighlights: object = (applyHighlights: number) => {
-        if (hasMeta) {
-          const RE = /{([\d,-]+)}/
-          const metadata = node.data.meta?.replace(/\s/g, '')
-          const strlineNumbers: any = RE?.test(metadata)
-            ? RE.exec(metadata) : '0'
-          const highlightLines = rangeParser(strlineNumbers ?? '0')
-          const highlight = highlightLines
-          const data: string = highlight.includes(applyHighlights)
-            ? 'highlight'
-            : ''
-          return { data }
-        } else {
-          return {}
-        }
-      }
-
-      return match ? (
-        <SyntaxHighlighter
-          style={nord}
-          language={match[1]}
-          PreTag="div"
-          className="codeStyle"
-          showLineNumbers={true}
-          wrapLines={hasMeta ? true : false}
-          useInlineStyles={true}
-          lineProps={applyHighlights  }
-          {...props}
-        />
-      ) : (
-        <code className={className} {...props} />
-      )
-    },
-  }
   const options: any = { year: 'numeric', month: 'long', day: 'numeric' };  
-
-
 
   return(
     <BlogLayout>
-      <Head>
-        <title>{`${info.title}`}</title>
-        <meta name="description" content={`${info.description}`} />
-
-        <meta itemProp="name" content={`${info.title}`} />
-        <meta itemProp="description" content={`${info.description}`} />
-
-        <meta property="og:url" content={`https://achalogy.ovh/blog/${info.id}`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${info.title}`} />
-        <meta property="og:description" content={`${info.description}`} />
-        <meta name="theme-color" content="#FF0000" />
-
-        <meta name="twitter:title" content={`${info.title}`} />
-        <meta name="twitter:description" content={`${info.description}`} />
-      </Head>
+      <BlogSEO info={info} />
       <div className="flex flex-col items-center">
         <div className="lg:border-b border-zinc-500 flex flex-col text-xs lg:items-center mb-4 w-full px-4 lg:px-0 lg:w-7/12">
           <h1 className="mt-4 text-4xl font-semibold dark:text-white">{info.title}</h1>
