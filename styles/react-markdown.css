@@ -42,8 +42,12 @@
   @apply mx-1 px-1 rounded-sm bg-codeHighlight-light dark:bg-codeHighlight-dark
 }
 
+.react-markdown p:has(img) {
+  @apply flex flex-col
+}
+
 .react-markdown img {
-  @apply self-center w-2/3 my-4
+  @apply self-center w-2/3 my-6
 }
 
 @font-face {
