@@ -12,7 +12,8 @@ export default function BlogPost({ blog, info }: {
   info: BlogInfo
 }) {
 
-  const options: any = { year: 'numeric', month: 'long', day: 'numeric' };  
+  const options: any = { year: 'numeric', month: 'long', day: 'numeric' };
+  let date = new Date(info.date)
 
   return(
     <BlogLayout>
@@ -20,7 +21,7 @@ export default function BlogPost({ blog, info }: {
       <div className="flex flex-col items-center">
         <div className="flex flex-col text-xs lg:items-center mb-4 w-full px-4 lg:px-0 lg:w-7/12">
           <h1 className="mt-4 text-4xl font-semibold dark:text-white text-center mb-2">{info.title}</h1>
-          <p className="dark:text-zinc-400 mb-3">{new Date(info.date).toLocaleDateString(undefined, options)}</p>
+          <p className="dark:text-zinc-400 mb-3">{date.toLocaleDateString(undefined, options)}</p>
         </div>
         <div className="flex flex-col react-markdown w-full px-6 lg:px-0 lg:w-6/12">
           <ReactMarkdown children={blog} remarkPlugins={[remarkGfm]} components={MarkdownComponents} />
