@@ -9,11 +9,11 @@ import BlogListed from "../../src/components/post";
 
 export default function BlogPage({videos, blogs}:any) {
     return (
-    <BlogLayout>
+    <BlogLayout isBlog={false}>
       <title>AchaBlog</title>
-      <div style={{flex: 1}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-8 gap-10">
+      <div style={{flex: 1, maxWidth: "100vw"}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-8 gap-10">
         <div className="lg:w-3/12 p-4 flex flex-col justify-between">
-          <div>
+          <div >
             <h1 className="mb-4 font-semibold text-lg dark:text-white">Recent Videos</h1>
             <div className="flex flex-col gap-4">
               {videos && videos.slice(0, 5).map((video: Video) => 
