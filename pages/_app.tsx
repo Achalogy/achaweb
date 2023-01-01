@@ -12,6 +12,7 @@ import getBlogList from '../src/api/blog/getBlogList'
 import Blog from '../src/interfaces/BlogInfo'
 export { reportWebVitals } from 'next-axiom';
 import Script from 'next/script'
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps, videos, _videos, blogs }: any) {
   const [searchText, setSearchText] = useState("")
@@ -112,6 +113,7 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
       </KBarPortal>
       <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet"></link>
       <Component {...pageProps} videos={_videos} blogs={blogs} />
+      <Analytics />
     </KBarProvider>
   
   </>
