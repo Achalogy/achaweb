@@ -36,10 +36,9 @@ export default function BlogPage({videos, blogs}:any) {
         <div className="lg:w-6/12 p-4">
             <h1 className="mb-4 font-semibold text-lg dark:text-white">Recent Posts</h1>
             <div className="flex flex-col py-6 px-2 gap-2">
-              {blogs && blogs.sort((a: any, b: any) => 
-                new Date(b.date).getDate() - 
-                new Date(a.date).getDate()
-                ).map((blog: Blog) => 
+              {blogs && blogs.sort((a: any, b: any) => {
+                return new Date(b.date).getTime() - new Date(a.date).getTime()
+              }).map((blog: Blog) => 
                 <BlogListed key={blog.id} {...blog} />
               )}
             </div>
