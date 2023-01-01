@@ -40,3 +40,9 @@ body::-webkit-scrollbar {display:none;}
 ::-webkit-scrollbar-thumb {
   @apply rounded-full bg-zinc-600
 }
+
+a {
+  text-underline-offset: .25em;
+  text-decoration: underline;
+  cursor: pointer;
+}
