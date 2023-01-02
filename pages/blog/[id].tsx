@@ -33,17 +33,11 @@ export default function BlogPost({ blog, info }: {
   )
 }
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
   const { id } = context.query;
-  const blog = await (await getBlog(id)).split("\n").slice(3).join("\n")
-  const info = await getBlogInfo(id)
+  const blog = await (await getBlog(id)).split("\n").slice(3).join("\n");
+  const info = await getBlogInfo(id);
 
-  return {
-    props: {blog, info}
-  }
-}
-
-export async function getStaticProps() {
   let _videos = await getMyVideos();
   let videos = await _videos.map((v: any) => {
     return {
@@ -60,6 +54,8 @@ export async function getStaticProps() {
       videos: await videos,
       _videos: _videos,
       blogs: await getBlogList(),
+      blog,
+      info,
     },
   };
 }
