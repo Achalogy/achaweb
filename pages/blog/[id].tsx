@@ -33,8 +33,15 @@ export default function BlogPost({ blog, info }: {
   )
 }
 
+export async function getStaticPaths() {
+  return {
+    paths: [], //indicates that no page needs be created at build time
+    fallback: "blocking", //indicates the type of fallback
+  };
+};
+
 export async function getStaticProps(context: any) {
-  const { id } = context.query;
+  const { id } = context.params;
   const blog = await (await getBlog(id)).split("\n").slice(3).join("\n");
   const info = await getBlogInfo(id);
 
