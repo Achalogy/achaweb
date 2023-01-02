@@ -9,21 +9,7 @@ import VideoComponent from "../src/components/video";
 import Video from "../src/interfaces/Video";
 import MainLayout from "../src/layouts/main.layout";
 
-export default function Home() {
-  
-  useEffect(() => {
-    let body = document.body
-    let hasVerticalScrollbar = body.scrollHeight > body.clientHeight;
-    if(!hasVerticalScrollbar) body.style.cssText = 'margin: 0 !important;'
-  }, [])
-
-  const [videos, setVideos]: Video[] | any[] = useState()
-  
-  useEffect(() => {
-    setVideos(
-      JSON.parse(localStorage.getItem("@videos") ?? "[]").slice(0, 3)
-    )
-  }, [setVideos])
+export default function Home({ _videos }: any) {
 
   return(
     <MainLayout>
@@ -50,7 +36,7 @@ export default function Home() {
           onClick={() => window.open('https://youtube.com/@Achalogy', '_blank')}
           className="text-4xl font-semibold mb-20 cursor-pointer hover:text-red-500 dark:text-white">My Youtube Channel <FontAwesomeIcon color="red" icon={faYoutube} /></h1>
         <div className="flex flex-row w-full justify-center gap-5 px-15 flex-wrap">
-          {videos && videos.map((video: Video) => 
+          {_videos && _videos.slice(0, 3).map((video: Video) => 
             <VideoComponent title={video.title} key={video.video} video={video.video} id={video.id} />
           )}
         </div>
