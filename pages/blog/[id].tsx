@@ -6,6 +6,8 @@ import BlogLayout from "../../src/layouts/blog.layout";
 import BlogSEO from "../../src/components/Blog/SEO";
 import BlogInfo from "../../src/interfaces/BlogInfo";
 import MarkdownComponents from "../../src/components/Blog/MarkdownComponents";
+import getMyVideos from "../../src/api/youtube/getMyVideos";
+import getBlogList from "../../src/api/blog/getBlogList";
 
 export default function BlogPost({ blog, info }: {
   blog: string,
@@ -39,4 +41,25 @@ export async function getServerSideProps(context: any) {
   return {
     props: {blog, info}
   }
+}
+
+export async function getStaticProps() {
+  let _videos = await getMyVideos();
+  let videos = await _videos.map((v: any) => {
+    return {
+      id: v.id,
+      name: v.title,
+      section: "YouTube",
+      onlyOnSearch: true,
+      isVideo: true,
+    };
+  });
+
+  return {
+    props: {
+      videos: await videos,
+      _videos: _videos,
+      blogs: await getBlogList(),
+    },
+  };
 }

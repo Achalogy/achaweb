@@ -6,6 +6,7 @@ import BlogLayout from "../../src/layouts/blog.layout";
 import getBlogList from '../../src/api/blog/getBlogList'
 import Blog from "../../src/interfaces/BlogInfo";
 import BlogListed from "../../src/components/post";
+import getMyVideos from "../../src/api/youtube/getMyVideos";
 
 export default function BlogPage({videos, blogs}:any) {
     return (
@@ -46,4 +47,25 @@ export default function BlogPage({videos, blogs}:any) {
       </div>
     </BlogLayout>
   )
+}
+
+export async function getStaticProps() {
+    let _videos = await getMyVideos();
+    let videos = await _videos.map((v: any) => {
+      return {
+        id: v.id,
+        name: v.title,
+        section: "YouTube",
+        onlyOnSearch: true,
+        isVideo: true,
+      };
+    });
+
+    return {
+      props: {
+        videos: await videos,
+        _videos: _videos,
+        blogs: await getBlogList(),
+      },
+    };
 }

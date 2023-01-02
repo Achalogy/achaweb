@@ -14,7 +14,8 @@ export { reportWebVitals } from 'next-axiom';
 import Script from 'next/script'
 import { Analytics } from "@vercel/analytics/react";
 
-export default function App({ Component, pageProps, videos, _videos, blogs }: any) {
+export default function App({ Component, pageProps }: any) {
+  const {videos, _videos, blogs} = pageProps
   const [searchText, setSearchText] = useState("")
   const router = useRouter()
   let actions: any   = [
@@ -117,19 +118,4 @@ export default function App({ Component, pageProps, videos, _videos, blogs }: an
     </KBarProvider>
   
   </>
-}
-
-App.getInitialProps = async () => {
-  let _videos = (await getMyVideos())
-  let videos = await _videos.map((v: any) => {
-      return {
-        id: v.id,
-        name: v.title,
-        section: "YouTube",
-        onlyOnSearch: true,
-        isVideo: true
-      }
-    })
-
-  return {videos: await videos, _videos: _videos, blogs: await getBlogList()}
 }

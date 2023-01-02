@@ -2,6 +2,8 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import getBlogList from "../src/api/blog/getBlogList";
+import getMyVideos from "../src/api/youtube/getMyVideos";
 import Project from "../src/components/project";
 import VideoComponent from "../src/components/video";
 import Video from "../src/interfaces/Video";
@@ -55,4 +57,25 @@ export default function Home() {
       </div>
     </MainLayout>
   )
+}
+
+export async function getStaticProps() {
+  let _videos = await getMyVideos();
+  let videos = await _videos.map((v: any) => {
+    return {
+      id: v.id,
+      name: v.title,
+      section: "YouTube",
+      onlyOnSearch: true,
+      isVideo: true,
+    };
+  });
+
+  return {
+    props: {
+      videos: await videos,
+      _videos: _videos,
+      blogs: await getBlogList(),
+    },
+  };
 }
