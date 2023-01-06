@@ -15,22 +15,37 @@ export default function BlogPost({ blog, info }: {
 }) {
 
   const options: any = { year: 'numeric', month: 'long', day: 'numeric' };
-  let date = new Date(info.date)
+  let date = new Date(info && info.date)
 
-  return(
+  return (
     <BlogLayout isBlog>
-      <BlogSEO info={info} />
-      <div className="flex flex-col items-center w-full" style={{maxWidth: "100vw"}}>
-        <div className="flex flex-col text-xs lg:items-center mb-4 w-full px-4 lg:px-0 lg:w-7/12">
-          <h1 className="mt-4 text-4xl font-semibold dark:text-white text-center mb-2">{info.title}</h1>
-          <p className="dark:text-zinc-400 mb-3 text-center">{date.toLocaleDateString(undefined, options)}</p>
-        </div>
-        <div className="flex flex-col react-markdown w-full px-6 lg:px-0 lg:w-1/2">
-          <ReactMarkdown children={blog} remarkPlugins={[remarkGfm]} components={MarkdownComponents} />
-        </div>
-      </div>
+      {info && (
+        <>
+          <BlogSEO info={info} />
+          <div
+            className="flex flex-col items-center w-full"
+            style={{ maxWidth: "100vw" }}
+          >
+            <div className="flex flex-col text-xs lg:items-center mb-4 w-full px-4 lg:px-0 lg:w-7/12">
+              <h1 className="mt-4 text-4xl font-semibold dark:text-white text-center mb-2">
+                {info && info.title}
+              </h1>
+              <p className="dark:text-zinc-400 mb-3 text-center">
+                {date.toLocaleDateString(undefined, options)}
+              </p>
+            </div>
+            <div className="flex flex-col react-markdown w-full px-6 lg:px-0 lg:w-1/2">
+              <ReactMarkdown
+                children={blog}
+                remarkPlugins={[remarkGfm]}
+                components={MarkdownComponents}
+              />
+            </div>
+          </div>
+        </>
+      )}
     </BlogLayout>
-  )
+  );
 }
 
 export async function getStaticPaths() {
@@ -38,7 +53,7 @@ export async function getStaticPaths() {
   let blogList = await blogs.map((b: BlogInfo) => {
     return {
       params: {
-        id: b.id
+        id: (b.id).split(".")[0]
       }
     }
   })
