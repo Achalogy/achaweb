@@ -35,7 +35,7 @@ export default function BlogPost({ blog, info }: {
 
 export async function getStaticPaths() {
   const blogs = await getBlogList()
-  let blogList = blogs.map((b: BlogInfo) => {
+  let blogList = await blogs.map((b: BlogInfo) => {
     return {
       params: {
         id: b.id
