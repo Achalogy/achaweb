@@ -26,7 +26,7 @@ export default function MainLayout({ children }: any) {
       </header>
       {children}
       <footer className="h-half flex items-center justify-center text-xl text-white">
-        <p>Check this repo at <a className="text-sky-300 tracking-wider" onClick={() => window.open('https://github.com/achalogy/achaweb')}>
+        <p className="text-black dark:text-white">Check this repo at <a className="text-sky-300 tracking-wider" onClick={() => window.open('https://github.com/achalogy/achaweb')}>
             Github Repo <FontAwesomeIcon icon={faGithub} />
           </a>
         </p>
