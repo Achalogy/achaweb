@@ -44,7 +44,7 @@ export async function getStaticPaths() {
   })
   return {
     paths: blogList,
-    fallback: "true",
+    fallback: true,
   };
 };
 
