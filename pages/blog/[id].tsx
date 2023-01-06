@@ -34,9 +34,17 @@ export default function BlogPost({ blog, info }: {
 }
 
 export async function getStaticPaths() {
+  const blogs = await getBlogList()
+  let blogList = blogs.map((b: BlogInfo) => {
+    return {
+      params: {
+        id: b.id
+      }
+    }
+  })
   return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
+    paths: blogList,
+    fallback: "true",
   };
 };
 
