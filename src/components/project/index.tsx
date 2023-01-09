@@ -1,10 +1,7 @@
 import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter } from "next/router";
 
 export default function Project() {
-
-  const router = useRouter()
 
   return (
     <div className="flex flex-col px-4 py-10 gap-5 drop-shadow-xl rounded-lg bg-white dark:bg-darkMode-800 justify-center items-center text-center w-full lg:w-1/4 hover:bg-gray-50 cursor-pointer dark:text-white"

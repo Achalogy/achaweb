@@ -1,18 +1,16 @@
-import '../styles/globals.css'
+import { Analytics } from "@vercel/analytics/react"
 import { KBarProvider } from 'kbar'
+import { KBarAnimator } from 'kbar/lib/KBarAnimator'
 import { KBarPortal } from 'kbar/lib/KBarPortal'
 import { KBarPositioner } from 'kbar/lib/KBarPositioner'
-import { KBarAnimator } from 'kbar/lib/KBarAnimator'
 import { KBarSearch } from 'kbar/lib/KBarSearch'
-import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import getMyVideos from '../src/api/youtube/getMyVideos'
-import RenderResults from '../src/components/renderKbar'
-import getBlogList from '../src/api/blog/getBlogList'
-import Blog from '../src/interfaces/BlogInfo'
-export { reportWebVitals } from 'next-axiom';
 import Script from 'next/script'
-import { Analytics } from "@vercel/analytics/react";
+import { useEffect, useState } from 'react'
+import RenderResults from '../src/components/renderKbar'
+import Blog from '../src/interfaces/BlogInfo'
+import '../styles/globals.css'
+export { reportWebVitals } from 'next-axiom'
 
 export default function App({ Component, pageProps }: any) {
   const {videos, _videos, blogs} = pageProps

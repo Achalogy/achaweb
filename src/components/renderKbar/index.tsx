@@ -1,9 +1,8 @@
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faMessage } from '@fortawesome/free-regular-svg-icons';
-import { faBlog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { KBarResults } from 'kbar/lib/KBarResults'
-import { useMatches } from 'kbar/lib/useMatches'
+import { KBarResults } from 'kbar/lib/KBarResults';
+import { useMatches } from 'kbar/lib/useMatches';
 
 const RenderResults = ({ searchText }: { searchText: any }) => {
   let { results } = useMatches();

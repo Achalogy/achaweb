@@ -1,12 +1,11 @@
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import getBlogList from '../../src/api/blog/getBlogList';
+import getMyVideos from "../../src/api/youtube/getMyVideos";
+import BlogListed from "../../src/components/post";
+import Blog from "../../src/interfaces/BlogInfo";
 import Video from "../../src/interfaces/Video";
 import BlogLayout from "../../src/layouts/blog.layout";
-import getBlogList from '../../src/api/blog/getBlogList'
-import Blog from "../../src/interfaces/BlogInfo";
-import BlogListed from "../../src/components/post";
-import getMyVideos from "../../src/api/youtube/getMyVideos";
 
 export default function BlogPage({videos, blogs}:any) {
     return (

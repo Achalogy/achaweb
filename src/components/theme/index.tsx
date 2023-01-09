@@ -1,8 +1,7 @@
-import { icon } from "@fortawesome/fontawesome-svg-core"
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState } from "react"
 import { useRouter } from 'next/router'
+import { useEffect, useState } from "react"
 
 const ThemeSwitch = () => {
 

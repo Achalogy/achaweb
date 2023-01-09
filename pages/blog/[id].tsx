@@ -1,13 +1,13 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import getBlog from "../../src/api/blog/getBlog"
-import getBlogInfo from "../../src/api/blog/getBlogInfo"
-import BlogLayout from "../../src/layouts/blog.layout";
+import getBlog from "../../src/api/blog/getBlog";
+import getBlogInfo from "../../src/api/blog/getBlogInfo";
+import getBlogList from "../../src/api/blog/getBlogList";
+import getMyVideos from "../../src/api/youtube/getMyVideos";
+import MarkdownComponents from "../../src/components/Blog/MarkdownComponents";
 import BlogSEO from "../../src/components/Blog/SEO";
 import BlogInfo from "../../src/interfaces/BlogInfo";
-import MarkdownComponents from "../../src/components/Blog/MarkdownComponents";
-import getMyVideos from "../../src/api/youtube/getMyVideos";
-import getBlogList from "../../src/api/blog/getBlogList";
+import BlogLayout from "../../src/layouts/blog.layout";
 
 export default function BlogPost({ blog, info }: {
   blog: string,

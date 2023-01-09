@@ -1,5 +1,4 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faCat, faPaw } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRouter } from "next/dist/client/router"
 import ThemeSwitch from "../components/theme"

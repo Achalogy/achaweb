@@ -1,12 +1,12 @@
+import rangeParser from 'parse-numeric-range'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
+import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
+import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown'
+import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss'
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
-import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss'
-import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
-import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown'
-import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
-import rangeParser from 'parse-numeric-range'
-import nord from "react-syntax-highlighter/dist/cjs/styles/prism/nord";
+import nord from "react-syntax-highlighter/dist/cjs/styles/prism/nord"
 
 
 SyntaxHighlighter.registerLanguage('tsx', tsx)

@@ -1,7 +1,6 @@
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
 import getBlogList from "../src/api/blog/getBlogList";
 import getMyVideos from "../src/api/youtube/getMyVideos";
 import Project from "../src/components/project";
