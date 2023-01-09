@@ -1,6 +1,7 @@
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Head from "next/head";
 import getBlogList from "../src/api/blog/getBlogList";
 import getMyVideos from "../src/api/youtube/getMyVideos";
 import Project from "../src/components/project";
@@ -10,10 +11,31 @@ import MainLayout from "../src/layouts/main.layout";
 
 export default function Home({ _videos }: any) {
 
-  return(
+  return (
     <MainLayout>
-      <title>Achalogy</title>
-      <div id="Achalogy" className="flex flex-col gap-3 justify-center items-center h-screen">
+      <Head>
+        <title>Achalogy</title>
+        <meta name="description" content="Achalogy Developper - Web Page" />
+
+        <meta itemProp="name" content="Achalogy" />
+        <meta itemProp="description" content="Achalogy Developper - Web Page" />
+
+        <meta
+          property="og:url"
+          content={`https://achalogy.dev/`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Achalogy" />
+        <meta property="og:description" content="Achalogy Developper - Web Page" />
+        <meta name="theme-color" content="#FF0000" />
+
+        <meta name="twitter:title" content="Achalogy" />
+        <meta name="twitter:description" content="Achalogy Developper - Web Page" />
+      </Head>
+      <div
+        id="Achalogy"
+        className="flex flex-col gap-3 justify-center items-center h-screen"
+      >
         <h1 className="text-6xl font-normal dark:text-white">Achalogy</h1>
         <p className="text-gray-400 line tracking-widest text-2xl">Software Developer</p>
         <button className="flex flex-row items-center rounded-lg px-3 py-1 border-gray-400 border gap-2 text-gray-300">
@@ -41,7 +63,7 @@ export default function Home({ _videos }: any) {
         </div>
       </div>
     </MainLayout>
-  )
+  );
 }
 
 export async function getStaticProps() {
