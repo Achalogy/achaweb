@@ -6,10 +6,30 @@ import BlogListed from "../../src/components/post";
 import Blog from "../../src/interfaces/BlogInfo";
 import Video from "../../src/interfaces/Video";
 import BlogLayout from "../../src/layouts/blog.layout";
+import Head from 'next/head'
 
 export default function BlogPage({videos, blogs}:any) {
     return (
     <BlogLayout isBlog={false}>
+      <Head>
+        <title>AchaBlog</title>
+        <meta name="description" content="Achalogy Deveveloper Blog" />
+
+        <meta itemProp="name" content="AchaBlog" />
+        <meta itemProp="description" content="Achalogy Deveveloper Blog" />
+
+        <meta
+          property="og:url"
+          content={`https://achalogy.dev/blog/`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AchaBlog" />
+        <meta property="og:description" content="Achalogy Deveveloper Blog" />
+        <meta name="theme-color" content="#FF0000" />
+
+        <meta name="twitter:title" content="AchaBlog" />
+        <meta name="twitter:description" content="Achalogy Deveveloper Blog" />
+      </Head>
       <title>AchaBlog</title>
       <div style={{flex: 1, maxWidth: "100vw"}} className="flex flex-col lg:flex-row justify-center px-4 lg:px-8 gap-10">
         <div className="lg:w-3/12 p-4 flex flex-col justify-between">
