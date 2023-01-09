@@ -66,12 +66,12 @@ export default function App({ Component, pageProps }: any) {
       }
     ]
 
-  actions = actions.concat(videos.map((v: any) => {
+  actions = videos && actions.concat(videos.map((v: any) => {
     v.perform = () => window.open(`https://youtu.be/${v.id}`, '_bl')
     return v
   }))
 
-  actions = actions.concat(blogs.map((blog: Blog) => {
+  actions = actions && actions.concat(blogs.map((blog: Blog) => {
     return({
       id: blog.id,
       name: blog.title,
