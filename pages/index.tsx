@@ -15,10 +15,10 @@ export default function Home({ _videos }: any) {
     <MainLayout>
       <Head>
         <title>Achalogy</title>
-        <meta name="description" content="Achalogy Developper - Web Page" />
+        <meta name="description" content="Achalogy Developer - Web Page" />
 
         <meta itemProp="name" content="Achalogy" />
-        <meta itemProp="description" content="Achalogy Developper - Web Page" />
+        <meta itemProp="description" content="Achalogy Developer - Web Page" />
 
         <meta
           property="og:url"
@@ -26,11 +26,11 @@ export default function Home({ _videos }: any) {
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Achalogy" />
-        <meta property="og:description" content="Achalogy Developper - Web Page" />
+        <meta property="og:description" content="Achalogy Developer - Web Page" />
         <meta name="theme-color" content="#FF0000" />
 
         <meta name="twitter:title" content="Achalogy" />
-        <meta name="twitter:description" content="Achalogy Developper - Web Page" />
+        <meta name="twitter:description" content="Achalogy Developer - Web Page" />
       </Head>
       <div
         id="Achalogy"
