@@ -17,15 +17,15 @@ export default function ContactForm() {
   return (
     <div
       id="contact"
-      className="flex flex-row bg-stone-100 dark:bg-darkMode-900 gap-3 justify-center items-center h-screen drop-shadow-lg"
+      className="flex flex-col lg:flex-row bg-stone-100 dark:bg-darkMode-900 gap-3 justify-center items-center lg:h-screen drop-shadow-lg"
     >
-      <div className="flex-1 flex flex-col justify-center items-center ">
+      <div className="lg:flex-1 w-full flex flex-col justify-center items-center p-8">
         <h1 className="text-4xl font-semibold mb-4 dark:text-white">
           Contact Me
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-8 items-center w-1/2"
+          className="flex flex-col gap-8 items-center w-full lg:w-1/2"
         >
           <div className="flex flex-col gap-2 w-full">
             <label htmlFor="subject" className="dark:text-white">
@@ -59,17 +59,18 @@ export default function ContactForm() {
           <button
             type="submit"
             value="Submit"
-            className="bg-red-500 w-3/6 p-3 text-lg rounded-md font-medium text-stone-200 hover:drop-shadow-lg hover:text-white"
+            className="bg-red-500 p-3 text-lg rounded-md font-medium text-stone-200 hover:drop-shadow-lg hover:text-white"
           >
             Send Message
           </button>
         </form>
       </div>
 
-      <div className="flex flex-col bg-stone-200 dark:bg-darkMode-700 w-1/3 h-full p-8 justify-center">
+      <div className="flex flex-col bg-stone-200 dark:bg-darkMode-700 w-full lg:w-1/3 h-full p-8 justify-center text-xs lg:text-sm">
         <h1 className="text-4xl font-semibold tracking-wider text-white mb-12">
           Direct Contact
         </h1>
+        {/* Cambiar esto en movil por botones */}
         <div className="flex flex-col p-4 gap-4">
           <a
             className="flex flex-row gap-4 items-center text-white cursor-pointer"
