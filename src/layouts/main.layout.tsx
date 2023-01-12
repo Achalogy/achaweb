@@ -1,4 +1,4 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { faDiscord, faGithub, faLinkedin, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useRouter } from "next/dist/client/router"
 import ThemeSwitch from "../components/theme"
@@ -38,16 +38,51 @@ export default function MainLayout({ children }: any) {
         </div>
       </header>
       {children}
-      <footer className="h-half flex items-center justify-center text-xl text-white">
+      <footer className="lg:h-half p-8 flex flex-col gap-8 lg:gap-12 items-center justify-center text-md lg:text-2xl text-gray-500">
         <p>
           Check this repo at{" "}
           <a
-            className="text-sky-300 tracking-wider"
+            className="text-sky-600 tracking-wider"
             onClick={() => window.open("https://github.com/achalogy/achaweb")}
           >
             Github Repo <FontAwesomeIcon icon={faGithub} />
           </a>
         </p>
+        <div className="flex flex-row justify-between w-1/2 lg:w-1/6">
+          <FontAwesomeIcon
+            className="cursor-pointer"
+            icon={faGithub}
+            onClick={() => window.open("https://github.com/achalogy", "_blank")}
+          />
+          <FontAwesomeIcon
+            className="cursor-pointer"
+            icon={faYoutube}
+            onClick={() =>
+              window.open("https://youtube.com/@Achalogy", "_blank")
+            }
+          />
+          <FontAwesomeIcon
+            className="cursor-pointer"
+            icon={faTwitter}
+            onClick={() =>
+              window.open("https://twitter.com/Achalogy", "_blank")
+            }
+          />
+          <FontAwesomeIcon
+            className="cursor-pointer"
+            icon={faDiscord}
+            onClick={() =>
+              window.open("https://discord.gg/QjzF4JYFy4", "_blank")
+            }
+          />
+          <FontAwesomeIcon
+            className="cursor-pointer"
+            icon={faLinkedin}
+            onClick={() =>
+              window.open("https://linkedin.com/in/achalogy", "_blank")
+            }
+          />
+        </div>
       </footer>
     </div>
   );
