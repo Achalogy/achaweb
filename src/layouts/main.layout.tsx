@@ -7,7 +7,8 @@ export default function MainLayout({ children }: any) {
   const menus = [
     ["Projects", "/#Projects"],
     ["YouTube", "/#YouTube"],
-    ["Blog", "/blog"]
+    ["Blog", "/blog"],
+    ["Contact", "/#contact"]
   ]
 
   const router = useRouter()
