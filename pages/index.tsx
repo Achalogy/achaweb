@@ -11,7 +11,6 @@ import Video from "../src/interfaces/Video";
 import MainLayout from "../src/layouts/main.layout";
 
 export default function Home({ _videos }: any) {
-
   return (
     <MainLayout>
       <Head>
@@ -41,10 +40,18 @@ export default function Home({ _videos }: any) {
         className="flex flex-col gap-3 justify-center items-center h-screen"
       >
         <h1 className="text-6xl font-normal dark:text-white">Achalogy</h1>
-        <p className="text-gray-400 line tracking-widest text-2xl">
+        <p className="text-gray-600 line tracking-widest text-2xl">
           Software Developer
         </p>
-        <button className="flex flex-row items-center rounded-lg px-3 py-1 border-gray-400 border gap-2 text-gray-300">
+        <button
+          onClick={() =>
+            window.open(
+              "https://drive.google.com/uc?id=1onr4D0aL3czursRcd9LY5W9xwdpw2r-I",
+              "_blank"
+            )
+          }
+          className="flex flex-row items-center rounded-lg px-3 py-1 border-gray-800 dark:border-gray-400 border gap-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 hover:drop-shadow-sm"
+        >
           <p className="font-medium">Resume</p>
           <FontAwesomeIcon icon={faDownload} />
         </button>
