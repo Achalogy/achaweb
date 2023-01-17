@@ -68,8 +68,6 @@ export default function Home({ _videos }: any) {
         </p>
         <div className="flex p-12 gap-10 items-center flex-wrap justify-center w-full">
           <Project />
-          <Project />
-          <Project />
         </div>
       </div>
       <div

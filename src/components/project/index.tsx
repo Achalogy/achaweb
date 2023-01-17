@@ -36,7 +36,7 @@ export default function Project() {
         Step by Step analisis and explanation of Advent Js challenges.
       </p>
       <p className="flex flex-row items-center gap-2 px-4 p-1 rounded-full border border-stone-600">
-        <FontAwesomeIcon icon={faStar} color="yellow" />
+        <FontAwesomeIcon icon={faStar} className="text-yellow-300 stroke-orange-300 stroke-[2em]" />
         {stars}
       </p>
     </div>
