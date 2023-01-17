@@ -2,7 +2,7 @@ import { faBookOpenReader, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
-export default function Project() {
+const Project = () => {
 
   const [stars, setStars] = useState()
 
@@ -41,4 +41,11 @@ export default function Project() {
       </p>
     </div>
   );
+}
+
+
+export default function Projects() {
+  return(
+    <Project />
+  )
 }
