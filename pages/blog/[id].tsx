@@ -71,7 +71,7 @@ export async function getStaticProps(context: any) {
 
   if(!blog || !info) {
     return {
-      notFount: true
+      notFound: true
     }
   }
 
