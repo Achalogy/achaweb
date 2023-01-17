@@ -2,10 +2,9 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
-import getBlogList from "../src/api/blog/getBlogList";
-import getMyVideos from "../src/api/youtube/getMyVideos";
+import getProps from '../src/api/getProps'
 import ContactForm from "../src/components/Contact";
-import Project from "../src/components/project";
+import Projects from "../src/components/projects";
 import VideoComponent from "../src/components/video";
 import Video from "../src/interfaces/Video";
 import MainLayout from "../src/layouts/main.layout";
@@ -67,7 +66,7 @@ export default function Home({ _videos }: any) {
           I'm proud of these projects, take a look :D
         </p>
         <div className="flex p-12 gap-10 items-center flex-wrap justify-center w-full">
-          <Project />
+          <Projects />
         </div>
       </div>
       <div
@@ -100,22 +99,5 @@ export default function Home({ _videos }: any) {
 }
 
 export async function getStaticProps() {
-  let _videos = await getMyVideos();
-  let videos = await _videos.map((v: any) => {
-    return {
-      id: v.id,
-      name: v.title,
-      section: "YouTube",
-      onlyOnSearch: true,
-      isVideo: true,
-    };
-  });
-
-  return {
-    props: {
-      videos: await videos,
-      _videos: _videos,
-      blogs: await getBlogList(),
-    },
-  };
+  return await getProps()
 }

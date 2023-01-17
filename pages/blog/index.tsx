@@ -1,12 +1,11 @@
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import getBlogList from '../../src/api/blog/getBlogList';
-import getMyVideos from "../../src/api/youtube/getMyVideos";
 import BlogListed from "../../src/components/post";
 import Blog from "../../src/interfaces/BlogInfo";
 import Video from "../../src/interfaces/Video";
 import BlogLayout from "../../src/layouts/blog.layout";
 import Head from 'next/head'
+import getProps from "../../src/api/getProps";
 
 export default function BlogPage({videos, blogs}:any) {
     return (
@@ -69,22 +68,5 @@ export default function BlogPage({videos, blogs}:any) {
 }
 
 export async function getStaticProps() {
-    let _videos = await getMyVideos();
-    let videos = await _videos.map((v: any) => {
-      return {
-        id: v.id,
-        name: v.title,
-        section: "YouTube",
-        onlyOnSearch: true,
-        isVideo: true,
-      };
-    });
-
-    return {
-      props: {
-        videos: await videos,
-        _videos: _videos,
-        blogs: await getBlogList(),
-      },
-    };
+  return await getProps()
 }

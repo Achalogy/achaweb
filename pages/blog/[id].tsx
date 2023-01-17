@@ -1,9 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import getBlog from "../../src/api/blog/getBlog";
-import getBlogInfo from "../../src/api/blog/getBlogInfo";
 import getBlogList from "../../src/api/blog/getBlogList";
-import getMyVideos from "../../src/api/youtube/getMyVideos";
+import getProps from "../../src/api/getProps";
 import MarkdownComponents from "../../src/components/Blog/MarkdownComponents";
 import BlogSEO from "../../src/components/Blog/SEO";
 import BlogInfo from "../../src/interfaces/BlogInfo";
@@ -63,29 +61,6 @@ export async function getStaticPaths() {
   };
 };
 
-export async function getStaticProps(context: any) {
-  const { id } = context.params;
-  const blog = await (await getBlog(id)).split("\n").slice(3).join("\n");
-  const info = await getBlogInfo(id);
-
-  let _videos = await getMyVideos();
-  let videos = await _videos.map((v: any) => {
-    return {
-      id: v.id,
-      name: v.title,
-      section: "YouTube",
-      onlyOnSearch: true,
-      isVideo: true,
-    };
-  });
-
-  return {
-    props: {
-      videos: await videos,
-      _videos: _videos,
-      blogs: await getBlogList(),
-      blog,
-      info,
-    },
-  };
+export async function getStaticProps() {
+  return await getProps();
 }
