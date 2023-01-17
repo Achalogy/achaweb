@@ -66,7 +66,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const { id } = context.params;
-  const blog = await (await getBlog(id)).split("\n").slice(3).join("\n");
+  const blog = (await getBlog(id)).split("\n").slice(3).join("\n");
   const info = await getBlogInfo(id);
 
   if(!blog || !info) {
