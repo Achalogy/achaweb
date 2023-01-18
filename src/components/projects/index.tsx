@@ -1,14 +1,18 @@
 import { faBookOpenReader, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import getProjectsLists from "../../api/projects/getProjectsList";
 
-const Project = ({ name, stars, shortDescription }: any) => {
+const Project = ({ name, stars, shortDescription, githubName }: any) => {
+
+  const router = useRouter()
+
   return (
     <div
       className="flex flex-col px-4 py-10 gap-5 drop-shadow-xl rounded-lg bg-white dark:bg-darkMode-800 justify-center items-center text-center w-full lg:w-1/4 hover:bg-gray-50 cursor-pointer dark:text-white"
       onClick={() =>
-        window.open("https://github.com/achalogy/advent-js-2022", "_blank")
+        router.push(`/projects/${githubName}`)
       }
       style={{
         aspectRatio: "10/11",
@@ -45,11 +49,12 @@ export default function Projects() {
   return (
     <>
       {projects &&
-        projects.map(({ name, stars, shortDescription }: any) => (
+        projects.map(({ name, stars, shortDescription, githubName }: any) => (
           <Project
             name={name}
-            starts={stars}
+            stars={stars}
             shortDescription={shortDescription}
+            githubName={githubName}
           />
         ))}
     </>
