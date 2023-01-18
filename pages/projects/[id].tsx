@@ -5,12 +5,16 @@ import Project from "../../src/interfaces/Project";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faStar } from "@fortawesome/free-solid-svg-icons";
 import Tag from "../../src/components/Tag";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import { useRouter } from "next/router";
 
 export default function ProjectPage({ project }: { project: Project }) {
+
+  const router = useRouter()
+
   return (
     <>
       {project && (
@@ -19,6 +23,7 @@ export default function ProjectPage({ project }: { project: Project }) {
             <div className="flex flex-row justify-between w-full">
               <div>
                 <h1 className="flex flex-row flex-wrap gap-2 items-center font-semibold text-xl mb-4">
+                  <FontAwesomeIcon icon={faChevronLeft} onClick={() => router.back()} className="aspect-square bg-white bg-opacity-0 hover:bg-opacity-20 cursor-pointer rounded-full p-2" />
                   {project.name}{" "}
                   <>
                     {project.languages.map((lang) => (
