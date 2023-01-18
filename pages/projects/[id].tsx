@@ -87,8 +87,6 @@ export async function getStaticProps(context: any) {
   const { id } = context.params;
   const project = await getProject(id);
 
-  console.log(project);
-
   if (!project) {
     return {
       notFound: true,
