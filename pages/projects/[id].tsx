@@ -12,18 +12,21 @@ import rehypeRaw from "rehype-raw";
 import { useRouter } from "next/router";
 
 export default function ProjectPage({ project }: { project: Project }) {
-
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <>
       {project && (
         <div className="flex flex-col items-center dark:text-white">
-          <header className="flex flex-col justify-between items-center bg-gray-100 dark:bg-darkMode-800 drop-shadow-sm p-8 h-60 w-full">
+          <header className="flex flex-col gap-8 justify-between items-center bg-gray-100 dark:bg-darkMode-800 drop-shadow-sm p-8 md:min-h-[35vh] w-full">
             <div className="flex flex-row justify-between w-full">
               <div>
-                <h1 className="flex flex-row flex-wrap gap-2 items-center font-semibold text-xl mb-4">
-                  <FontAwesomeIcon icon={faChevronLeft} onClick={() => router.back()} className="aspect-square bg-white bg-opacity-0 hover:bg-opacity-20 cursor-pointer rounded-full p-2" />
+                <h1 className="flex flex-row flex-wrap gap-2 items-center font-semibold text-sm md:text-xl mb-4">
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    onClick={() => router.back()}
+                    className="aspect-square bg-white bg-opacity-0 hover:bg-opacity-20 cursor-pointer rounded-full p-2"
+                  />
                   {project.name}{" "}
                   <>
                     {project.languages.map((lang) => (
@@ -31,15 +34,21 @@ export default function ProjectPage({ project }: { project: Project }) {
                     ))}
                   </>
                 </h1>
-                <p>{project.shortDescription}</p>
+                <p className="dark:text-gray-300 text-xs md:text-base">
+                  {project.shortDescription}
+                </p>
               </div>
 
               <div>
-                <div className="flex flex-row gap-4 items-center">
-                  <a href={project.repo} target="_blank">
-                    <FontAwesomeIcon icon={faGithub} /> Ir a Github
+                <div className="flex flex-col md:flex-row gap-4 text-center items-center">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    className="text-xs md:text-base"
+                  >
+                    <FontAwesomeIcon icon={faGithub} /> Github
                   </a>
-                  <p className="flex flex-row items-center gap-2 px-4 p-1 rounded-full border border-stone-600">
+                  <p className="flex flex-row items-center gap-2 px-4 p-1 rounded-full border border-stone-600 text-xs md:text-base">
                     <FontAwesomeIcon
                       icon={faStar}
                       className="text-yellow-300 stroke-orange-300 stroke-[2em]"
@@ -49,7 +58,7 @@ export default function ProjectPage({ project }: { project: Project }) {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row flex-wrap gap-2">
+            <div className="flex flex-row flex-wrap gap-2 justify-center">
               {project.tags?.map((topic: any) => (
                 <Tag str={topic} />
               ))}
@@ -57,7 +66,7 @@ export default function ProjectPage({ project }: { project: Project }) {
           </header>
           <ReactMarkdown
             rehypePlugins={[rehypeRaw]}
-            className="react-markdown py-24 w-2/3"
+            className="react-markdown py-24 px-2 w-full md:w-2/3"
             remarkPlugins={[remarkGfm]}
           >
             {project.readme}
