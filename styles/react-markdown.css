@@ -3,7 +3,7 @@
 }
 
 .react-markdown table {
-  @apply self-center
+  @apply mx-auto
 }
 
 .react-markdown pre {
@@ -47,7 +47,7 @@
 }
 
 .react-markdown img {
-  @apply self-center w-10/12 lg:w-2/3 my-6
+  @apply mx-auto w-10/12 lg:w-2/3 my-6
 }
 
 @font-face {
@@ -57,4 +57,15 @@
 
 .react-markdown code, .react-markdown code span {
   font-family: "Hack", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+table,
+tr,
+td,
+th {
+  @apply border border-slate-700 p-1 px-2 mx-auto;
+}
+
+th {
+  @apply font-semibold;
 }
