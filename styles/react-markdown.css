@@ -3,7 +3,7 @@
 }
 
 .react-markdown table {
-  @apply mx-auto
+  @apply mx-auto table-fixed w-full
 }
 
 .react-markdown pre {
@@ -63,7 +63,7 @@ table,
 tr,
 td,
 th {
-  @apply border border-slate-700 p-1 px-2 mx-auto;
+  @apply border border-slate-700 p-1 px-2 mx-auto text-xs md:text-base;
 }
 
 th {
