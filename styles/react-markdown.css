@@ -1,5 +1,5 @@
 .react-markdown {
-  @apply text-black dark:text-zinc-300 mb-20 gap-2
+  @apply flex flex-col text-black dark:text-zinc-300 mb-20 gap-2
 }
 
 .react-markdown table {
