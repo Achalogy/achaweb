@@ -41,20 +41,24 @@ export default function ProjectPage({ project }: { project: Project }) {
 
               <div>
                 <div className="flex flex-col md:flex-row gap-4 text-center items-center">
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    className="text-xs md:text-base"
-                  >
-                    <FontAwesomeIcon icon={faGithub} /> Github
-                  </a>
-                  <p className="flex flex-row items-center gap-2 px-4 p-1 rounded-full border border-stone-600 text-xs md:text-base">
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="text-yellow-300 stroke-orange-300 stroke-[2em]"
-                    />
-                    {project.stars}
-                  </p>
+                  {project.repo && (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      className="text-xs md:text-base"
+                    >
+                      <FontAwesomeIcon icon={faGithub} /> Github
+                    </a>
+                  )}
+                  {project.stars && (
+                    <p className="flex flex-row items-center gap-2 px-4 p-1 rounded-full border border-stone-600 text-xs md:text-base">
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="text-yellow-300 stroke-orange-300 stroke-[2em]"
+                      />
+                      {project.stars}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
