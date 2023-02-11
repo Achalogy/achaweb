@@ -2,7 +2,8 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
-import getProps from '../src/api/getProps'
+import Link from "next/link";
+import getProps from "../src/api/getProps";
 import ContactForm from "../src/components/Contact";
 import Projects from "../src/components/projects";
 import VideoComponent from "../src/components/video";
@@ -42,18 +43,14 @@ export default function Home({ _videos }: any) {
         <p className="text-gray-600 line tracking-widest text-2xl">
           Software Developer
         </p>
-        <button
-          onClick={() =>
-            window.open(
-              "https://drive.google.com/uc?id=1onr4D0aL3czursRcd9LY5W9xwdpw2r-I",
-              "_blank"
-            )
-          }
-          className="flex flex-row items-center rounded-lg px-3 py-1 border-gray-800 dark:border-gray-400 border gap-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 hover:drop-shadow-sm"
+        <Link
+          target="_blank"
+          href="https://drive.google.com/uc?export=view&id=1onr4D0aL3czursRcd9LY5W9xwdpw2r-I"
+          className="no-underline flex flex-row items-center rounded-lg px-3 py-1 border-gray-800 dark:border-gray-400 border gap-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 hover:drop-shadow-sm"
         >
           <p className="font-medium">Resume</p>
           <FontAwesomeIcon icon={faDownload} />
-        </button>
+        </Link>
       </div>
       <div
         id="Projects"
@@ -99,5 +96,5 @@ export default function Home({ _videos }: any) {
 }
 
 export async function getStaticProps() {
-  return await getProps()
+  return await getProps();
 }
