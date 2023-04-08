@@ -8,10 +8,10 @@ const CVSection = ({ id, name, children }: {
   children?: JSX.Element | any;
 }) => {
   return <section className="flex w-full" id={id}>
-    <div className="w-1/4 flex h-full items-start justify-end py-8">
+    <div className="hidden w-1/4 md:flex h-full items-start justify-end py-8">
       <h2 className="text-xl font-semibold text-slate-600">{name}</h2>
     </div>
-    <div className="w-3/4 px-[5%] p-8">
+    <div className="w-full md:w-3/4 px-[5%] md:p-8">
       {children}
     </div>
   </section>
@@ -57,27 +57,28 @@ export default () => {
   }, [])
 
   return <div className="flex min-h-screen py-8">
-    <div className="cv flex flex-col w-4/5 h-full">
+    <div className="cv flex flex-col w-full md:w-4/5 h-full">
+      <p className="text-center text-xs md:hidden text-red-600 bg-red-100 px-2 p-1 rounded mx-auto mb-4">Not Optimized for Mobile</p>
       <CVSection id="details" name="Details">
-        <p className="mb-[5%] text-slate-400">Tunja, Colombia | acha@achalogy.dev</p>
-        <p className="text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
+        <p className="mb-[5%] text-sm md:text-base text-slate-400">Tunja, Colombia | acha@achalogy.dev</p>
+        <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
         <p className="text-slate-600">A 17 years old autodidact Software/Web Developer from Colombia.</p>
       </CVSection>
       <CVSection id="education" name="Education">
         <div className="flex flex-col gap-2">
           <div>
-            <h3 id="bachelor" className="text-2xl font-semibold mb-1">Bachiller, Salesiano Maldonado, Tunja</h3>
-            <p className="text-slate-400 font-semibold p-2">2016 - 2022</p>
+            <h3 id="bachelor" className="text-lg md:text-2xl font-semibold mb-1">Bachiller, Salesiano Maldonado, Tunja</h3>
+            <p className="text-slate-400 font-semibold p-2 text-sm md:text-base">2016 - 2022</p>
           </div>
           <div>
-            <h3 id="jsfreecodecamp" className="text-2xl font-semibold mb-1">Javascript Algoritms and Data Structures, freeCodeCamp</h3>
+            <h3 id="jsfreecodecamp" className="text-lg md:text-2xl font-semibold mb-1">Javascript Algoritms and Data Structures, freeCodeCamp</h3>
             <div className="p-2">
-              <p className="text-slate-400 font-semibold">May 2022</p>
-              <p className="text-slate-500">Verify this certification at <a href="https://freecodecamp.org/certification/Achalogy/javascript-algorithms-and-data-structures">freeCodeCamp.org</a></p>
+              <p className="text-slate-400 font-semibold text-sm md:text-base">May 2022</p>
+              <p className="text-slate-500 text-sm md:text-base">Verify this certification at <a href="https://freecodecamp.org/certification/Achalogy/javascript-algorithms-and-data-structures">freeCodeCamp.org</a></p>
             </div>
           </div>
           <div>
-            <h3 id="minticpy" className="text-2xl font-semibold mb-1">Programming Fundamentals with Python, TIC Ministry, Colombia</h3>
+            <h3 id="minticpy" className="text-lg md:text-2xl font-semibold mb-1">Programming Fundamentals with Python, TIC Ministry, Colombia</h3>
             <p className="text-slate-400 font-semibold p-2">Feb 2021</p>
           </div>
         </div>
@@ -123,7 +124,7 @@ export default () => {
           </div>
           <div className="flex flex-col gap-1">
             <h3 className="text-2xl font-semibold mb-1" id="adventjs2022">Advent JS 2022 - Explicado para principiantes</h3>
-            <div className="flex flex-col gap-2 p-2 text-lg">
+            <div className="flex flex-col gap-3 md:gap-2 p-2 text-lg">
               <p>Explanations of technical programming exercises, step by step and in video.</p>
 
               <p>The main idea was to create a Github repository where the answers to technical programming challenges would be published, but with an educational technical challenges, but with an educational approach, for people who are just starting to learn learning JavaScript, algorithms or just want to understand the solutions to them. solutions to them. Currently, the project is scaling up to an audiovisual medium and the explanations are being published on YouTube. explanations on YouTube.</p>
@@ -133,7 +134,7 @@ export default () => {
           </div>
           <div className="flex flex-col gap-1">
             <h3 className="text-2xl font-semibold mb-1" id="icfes">(Name in progress) Icfes Achalogy</h3>
-            <div className="flex flex-col gap-2 p-2 text-lg">
+            <div className="flex flex-col gap-3 md:gap-2 p-2 text-lg">
               <p>Interactive platform to prepare for the university entrance exam in Colombia called ICFES.</p>
 
               <p>The objective of this platform is to encourage the preparation of 11th grade students, who are about to complete their high school studies and will soon enter university.</p>
@@ -149,7 +150,7 @@ export default () => {
       </CVSection>
     </div >
 
-    <div className="fixed right-0 top-0 p-8 m-2 flex flex-col w-1/5 py-[5%]">
+    <div className="hidden md:fixed right-0 top-0 p-8 m-2 w-1/5 py-[5%]">
       <ul className="flex flex-col gap-2">
         {tree && Object.keys(tree).map(t =>
           <li className="text-sm">
