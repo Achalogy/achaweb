@@ -1,7 +1,12 @@
 const getProject = async (id) => {
-  return await fetch(`https://back-achaweb.vercel.app/projects?search=${id}`).then(
-    (x) => x.json()
-  );
+  try {
+    return await fetch(`https://back-achaweb.vercel.app/projects?search=${id}`).then(
+      (x) => x.json()
+    );
+  } catch (e) {
+    console.log(e)
+    return {}
+  }
 };
 
 export default getProject;
