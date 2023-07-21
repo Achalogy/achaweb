@@ -5,7 +5,7 @@ export default ({ name, level }: {
 
   const levels = ["Beginner", "Intermediate", "Advanced", "Mastery"]
 
-  return <div className="flex p-2 px-3 items-center bg-slate-100 rounded  mb-1">
+  return <div className="flex p-2 px-3 items-center bg-slate-900 rounded  mb-1">
     <p className="flex-1 font-semibold">{name}</p>
     <div className="p-1 w-[40%] md:w-[15%] rounded">
       <p className="text-center">{levels[level - 1]}</p>

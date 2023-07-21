@@ -1,22 +1,49 @@
-const { withAxiom } = require('next-axiom');
-const { withSentryConfig } = require('@sentry/nextjs');
-
 /** @type {import('next').NextConfig} */
 
-const nextConfig = withAxiom({
+const { createSecureHeaders } = require("next-secure-headers");
+const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "i.ytimg.com"
-    ]
+    domains: ["pub-4270cc2cbd0b47709feb53a0a8dc6023.r2.dev"]
   },
-  sentry: {
-    hideSourceMaps: true
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          ...createSecureHeaders(),
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          }
+        ]
+      }
+    ]
   }
-})
+}
 
-const sentryWebpackPluginOptions = {
-  silent: true,
-};
-
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
+module.exports = nextConfig

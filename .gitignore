@@ -35,11 +35,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Env
-
-*.env
 # Sentry
 .sentryclirc
 
-# Sitemaps
-sitemap*.xml
+# Robots and Sitemaps
+
+public/robots.txt
+public/sitemap*.xml
+
+# lock file
+
+package-lock.json

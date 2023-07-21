@@ -1,100 +1,42 @@
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Head from "next/head";
-import Link from "next/link";
-import getProps from "../src/api/getProps";
-import ContactForm from "../src/components/Contact";
-import Projects from "../src/components/projects";
-import VideoComponent from "../src/components/video";
-import Video from "../src/interfaces/Video";
-import MainLayout from "../src/layouts/main.layout";
+import Link from "next/link"
+import ProjectComponent from "src/components/ProjectComponent"
+import DefaultSeo from "src/defaultSeo"
+import HomeLayout from "src/layouts/HomeLayout"
+import { IProject } from "src/models/IProject"
 
-export default function Home({ _videos }: any) {
-  return (
-    <MainLayout>
-      <Head>
-        <title>Achalogy</title>
-        <meta name="description" content="Achalogy Developer - Web Page" />
+export default ({ projects }: {
+  projects: IProject[]
+}) => {
 
-        <meta itemProp="name" content="Achalogy" />
-        <meta itemProp="description" content="Achalogy Developer - Web Page" />
-
-        <meta property="og:url" content={`https://achalogy.dev/`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Achalogy" />
-        <meta
-          property="og:description"
-          content="Achalogy Developer - Web Page"
-        />
-        <meta name="theme-color" content="#FF0000" />
-
-        <meta name="twitter:title" content="Achalogy" />
-        <meta
-          name="twitter:description"
-          content="Achalogy Developer - Web Page"
-        />
-      </Head>
-      <div
-        id="Achalogy"
-        className="flex flex-col gap-3 justify-center items-center h-screen"
-      >
-        <h1 className="text-6xl font-normal dark:text-white">Achalogy</h1>
-        <p className="text-gray-600 line tracking-widest text-2xl">
-          Software Developer
-        </p>
-        <Link
-          target="_blank"
-          href="https://drive.google.com/uc?export=view&id=1onr4D0aL3czursRcd9LY5W9xwdpw2r-I"
-          className="no-underline flex flex-row items-center rounded-lg px-3 py-1 border-gray-800 dark:border-gray-400 border gap-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 hover:drop-shadow-sm"
-        >
-          <p className="font-medium">Resume</p>
-          <FontAwesomeIcon icon={faDownload} />
-        </Link>
+  return <HomeLayout>
+    <DefaultSeo />
+    <div className="flex flex-col justify-center gap-4 items-center h-[20vh] xl:h-[92vh] xl:pb-[8vh]">
+      <div className="flex flex-col gap-2">
+        <p className="text-6xl xl:text-8xl font-black tracking-wide text-teal-300">HI!</p>
+        <p className="text-xl xl:text-6xl font-semibold">I'm acha, <span className="font-black text-teal-300">web</span> developer :D</p>
       </div>
-      <div
-        id="Projects"
-        className="flex flex-col text-center px-4 lg:px-32 items-center justify-center py-8 min-h-screen"
-      >
-        <h1 className="text-4xl font-semibold mb-4 dark:text-white">
-          Some of my Projects
-        </h1>
-        <p className="mb-12 dark:text-white">
-          I'm proud of these projects, take a look :D
-        </p>
-        <div className="flex p-12 gap-10 items-center flex-wrap justify-center w-full">
-          <Projects />
-        </div>
-      </div>
-      <div
-        id="YouTube"
-        className="flex flex-col justify-center items-center min-h-screen bg-slate-100 dark:bg-darkMode-800 text-center py-8"
-      >
-        <h1
-          onClick={() => window.open("https://youtube.com/@Achalogy", "_blank")}
-          className="text-4xl font-semibold mb-20 cursor-pointer hover:text-red-500 dark:text-white"
-        >
-          My Youtube Channel <FontAwesomeIcon color="red" icon={faYoutube} />
-        </h1>
-        <div className="flex flex-row w-full justify-center gap-5 px-15 flex-wrap">
-          {_videos &&
-            _videos
-              .slice(0, 3)
-              .map((video: Video) => (
-                <VideoComponent
-                  title={video.title}
-                  key={video.video}
-                  video={video.video}
-                  id={video.id}
-                />
-              ))}
-        </div>
-      </div>
-      <ContactForm />
-    </MainLayout>
-  );
+      <Link className="rounded-full px-8 p-1 border border-white no-underline hover:bg-white hover:bg-opacity-20" href={"/cv"}>Ver CV</Link>
+    </div>
+    <div className="flex flex-col gap-8 py-8 items-center">
+      {/* <p className="text-slate-900 font-black drop-shadow-[0_0px_10px_rgba(255,255,255,0.25)] text-4xl xl:text-8xl opacity-[0.05] hover:text-black">Projects</p> */}
+      {projects.map(project =>
+        <ProjectComponent {...project} />
+      )}
+    </div>
+  </HomeLayout>
 }
 
 export async function getStaticProps() {
-  return await getProps();
+  const isDev = process.env.NODE_ENV === "development"
+
+  const projects = await (await fetch(
+    `${isDev ? "http://localhost:3000" : "https://achalogy.dev"}/api/projects`
+  )).json()
+
+  return {
+    props: {
+      projects
+    },
+    revalidate: 15
+  }
 }
