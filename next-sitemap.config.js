@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: '',
+  siteUrl: 'https://achalogy.dev/',
   generateRobotsTxt: true,
   exclude: [
     '/_next/*',
