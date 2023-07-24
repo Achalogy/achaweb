@@ -129,7 +129,7 @@ export default () => {
           </div>
         </div>
         <div className="flex flex-col gap-1">
-          <h3 className="text-2xl font-semibold mb-1" id="icfes">(Name in progress) Icfes Achalogy</h3>
+          <h3 className="text-2xl font-semibold mb-1" id="icfes">IcfesU</h3>
           <div className="flex flex-col gap-4 md:gap-3 p-2 text-base xl:">
             <p>Interactive platform to prepare for the university entrance exam in Colombia called ICFES.</p>
 
@@ -137,9 +137,7 @@ export default () => {
 
             <p>Although the main focus of the website is the ICFES, it has texts, materials, tests and more to practice many of the important skills of Mathematics, English, Critical Reading, Social and Natural Sciences, as well as subtopics of these subjects. Among some of these is the preparation for the National University exam.</p>
 
-            <p>This project is in process, currently in version v1.0.0.0 and is expected to have a renewed and updated version by July 2023, with one of its most interesting functions: Artificial Intelligence.</p>
-
-            <p>You can check it here: <a href="https://icfes.achalogy.dev/">Icfes Achalogy (We're moving)</a>.</p>
+            <p>You can check it here: <a href="https://icfesu.com/">Icfes Achalogy (We're moving)</a>.</p>
           </div>
         </div>
       </CVSection>
