@@ -61,11 +61,18 @@ export default () => {
     <div className="cv flex flex-col w-full md:w-4/5 h-full">
       <p className="w-[95%] text-center text-xs md:hidden text-red-400 bg-red-200 px-2 p-1 rounded mx-auto mb-4 bg-opacity-30">Not Optimized for Mobile</p>
       <CVSection id="details" name="Details">
-        <p className="mb-[2%] text-sm md:text-base text-slate-400">Tunja, Colombia | acha@achalogy.dev</p>
+        <p className="mb-[2%] text-sm md:text-base text-slate-400">Bogotá, Colombia | acha@achalogy.dev</p>
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
-        <p className="text-slate-400">A 17 years old autodidact Software/Web Developer from Colombia.</p>
+        <p className="text-slate-400">A 17 years old autodidact Software/Web Developer from Colombia. PUJ Student.</p>
       </CVSection>
       <CVSection id="education" name="Education">
+        <div>
+          <h3 id="bachelor" className="text-base xl: md:text-2xl font-semibold mb-1">Undergraduate - Systems Engineering, Pontificia Universidad Javeriana</h3>
+          <div className="px-2">
+            <p className="text-slate-400 font-semibold text-sm md:text-base">2023 - </p>
+            <p className="text-slate-400 text-sm md:text-base">Undergraduate details <a href="https://www.javeriana.edu.co/carrera-ingenieria-de-sistemas" target="_blank">here</a></p>
+          </div>
+        </div>
         <div>
           <h3 id="bachelor" className="text-base xl: md:text-2xl font-semibold mb-1">Bachiller, Salesiano Maldonado, Tunja</h3>
           <p className="text-slate-400 font-semibold p-2 text-sm md:text-base">2016 - 2022</p>
@@ -74,7 +81,7 @@ export default () => {
           <h3 id="jsfreecodecamp" className="text-base xl: md:text-2xl font-semibold mb-1">Javascript Algoritms and Data Structures, freeCodeCamp</h3>
           <div className="p-2">
             <p className="text-slate-400 font-semibold text-sm md:text-base">May 2022</p>
-            <p className="text-slate-400 text-sm md:text-base">Verify this certification at <a href="https://freecodecamp.org/certification/Achalogy/javascript-algorithms-and-data-structures">freeCodeCamp.org</a></p>
+            <p className="text-slate-400 text-sm md:text-base">Verify this certification at <a href="https://freecodecamp.org/certification/Achalogy/javascript-algorithms-and-data-structures" target="_blank">freeCodeCamp.org</a></p>
           </div>
         </div>
         <div>
@@ -116,7 +123,7 @@ export default () => {
       <CVSection id="projects" name="Projects">
         <div>
           <h3 className="text-2xl font-semibold mb-1" id="webpage">Personal Page</h3>
-          <p className="p-2">I made this personal web page from scratch, You can check the repo in <a href="https://github.com/Achalogy/achaweb">Github</a>.</p>
+          <p className="p-2">I made this personal web page from scratch, You can check the repo in <a href="https://github.com/Achalogy/achaweb" target="_blank">Github</a>.</p>
         </div>
         <div className="flex flex-col gap-1">
           <h3 className="text-2xl font-semibold mb-1" id="adventjs2022">Advent JS 2022 - Explicado para principiantes</h3>
@@ -125,7 +132,7 @@ export default () => {
 
             <p>The main idea was to create a Github repository where the answers to technical programming challenges would be published, but with an educational technical challenges, but with an educational approach, for people who are just starting to learn learning JavaScript, algorithms or just want to understand the solutions to them. solutions to them. Currently, the project is scaling up to an audiovisual medium and the explanations are being published on YouTube. explanations on YouTube.</p>
 
-            <p>You can check it here: <a href="https://github.com/achalogy/advent-js-2022">AdventJS repo</a>.</p>
+            <p>You can check it here: <a href="https://github.com/achalogy/advent-js-2022" target="_blank">AdventJS repo</a>.</p>
           </div>
         </div>
         <div className="flex flex-col gap-1">
@@ -137,7 +144,7 @@ export default () => {
 
             <p>Although the main focus of the website is the ICFES, it has texts, materials, tests and more to practice many of the important skills of Mathematics, English, Critical Reading, Social and Natural Sciences, as well as subtopics of these subjects. Among some of these is the preparation for the National University exam.</p>
 
-            <p>You can check it here: <a href="https://icfesu.com/">IcfesU</a>.</p>
+            <p>You can check it here: <a href="https://icfesu.com/" target="_blank">IcfesU</a>.</p>
           </div>
         </div>
       </CVSection>
