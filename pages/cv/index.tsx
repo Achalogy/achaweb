@@ -67,7 +67,7 @@ export default () => {
       </CVSection>
       <CVSection id="education" name="Education">
         <div>
-          <h3 id="bachelor" className="text-base xl: md:text-2xl font-semibold mb-1">Undergraduate - Systems Engineering, Pontificia Universidad Javeriana</h3>
+          <h3 id="undergraduate" className="text-base xl: md:text-2xl font-semibold mb-1">Undergraduate - Systems Engineering, Pontificia Universidad Javeriana</h3>
           <div className="px-2">
             <p className="text-slate-400 font-semibold text-sm md:text-base">2023 - </p>
             <p className="text-slate-400 text-sm md:text-base">Undergraduate details <a href="https://www.javeriana.edu.co/carrera-ingenieria-de-sistemas" target="_blank">here</a></p>
