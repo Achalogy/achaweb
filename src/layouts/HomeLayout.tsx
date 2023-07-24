@@ -18,7 +18,7 @@ export default ({ children }: {
   return <div className="relative flex flex-col justify-center min-h-screen">
     <header className="fixed top-0 flex justify-center gap-8 items-center h-[8vh] w-full xl:px-[5%] bg-slate-800 bg-opacity-[0.9] backdrop-blur-lg z-50">
       <div className="xl:flex-1">
-        <h1 className="xl:flex xl:text-3xl font-sans">Achalogy</h1>
+        <h1 className="xl:flex xl:text-3xl font-sans font-semibold">Achalogy</h1>
       </div>
       <div className="flex items-center justify-center gap-[35%] xl:gap-[15%] h-full text-lg xl:text-xl">
         <SocialMedia />
