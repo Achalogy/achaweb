@@ -143,7 +143,7 @@ export default () => {
           </div>
         </div>
       </CVSection>
-      D</div >
+    </div >
 
     <div className="hidden md:fixed md:flex flex-col right-0 top-0 p-8 m-2 w-1/5 py-[5%]">
       <ul className="flex flex-col gap-2">
