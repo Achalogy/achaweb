@@ -137,7 +137,7 @@ export default () => {
 
             <p>Although the main focus of the website is the ICFES, it has texts, materials, tests and more to practice many of the important skills of Mathematics, English, Critical Reading, Social and Natural Sciences, as well as subtopics of these subjects. Among some of these is the preparation for the National University exam.</p>
 
-            <p>You can check it here: <a href="https://icfesu.com/">Icfes Achalogy (We're moving)</a>.</p>
+            <p>You can check it here: <a href="https://icfesu.com/">IcfesU</a>.</p>
           </div>
         </div>
       </CVSection>
