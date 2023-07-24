@@ -43,7 +43,7 @@ export default ({ title, description, image, tags, time, icon, url }: IProject) 
     <TagsListComponent mobile />
     <div className="xl:w-[65%] flex flex-col gap-2 xl:gap-4 xl:py-4">
       <h3 className="xl:text-3xl font-black tracking-wide">
-        <a href={url} target='_blank' className='no-underline'>{title}</a>
+        <a href={url} target='_blank' className='no-underline font-black'>{title}</a>
       </h3>
       <p className="text-[0.85rem] xl:text-lg">{description}</p>
       <TagsListComponent />

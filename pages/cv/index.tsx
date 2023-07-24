@@ -63,7 +63,7 @@ export default () => {
       <CVSection id="details" name="Details">
         <p className="mb-[2%] text-sm md:text-base text-slate-400">Tunja, Colombia | acha@achalogy.dev</p>
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
-        <p className="text-slate-600">A 17 years old autodidact Software/Web Developer from Colombia.</p>
+        <p className="text-slate-400">A 17 years old autodidact Software/Web Developer from Colombia.</p>
       </CVSection>
       <CVSection id="education" name="Education">
         <div>
@@ -74,7 +74,7 @@ export default () => {
           <h3 id="jsfreecodecamp" className="text-base xl: md:text-2xl font-semibold mb-1">Javascript Algoritms and Data Structures, freeCodeCamp</h3>
           <div className="p-2">
             <p className="text-slate-400 font-semibold text-sm md:text-base">May 2022</p>
-            <p className="text-slate-500 text-sm md:text-base">Verify this certification at <a href="https://freecodecamp.org/certification/Achalogy/javascript-algorithms-and-data-structures">freeCodeCamp.org</a></p>
+            <p className="text-slate-400 text-sm md:text-base">Verify this certification at <a href="https://freecodecamp.org/certification/Achalogy/javascript-algorithms-and-data-structures">freeCodeCamp.org</a></p>
           </div>
         </div>
         <div>
@@ -149,12 +149,12 @@ export default () => {
       <ul className="flex flex-col gap-2">
         {tree && Object.keys(tree).map(t =>
           <li className="text-sm">
-            <a className="no-underline text-slate-400 hover:text-slate-700" href={`#${t}`}>{tree[t].name}</a>
+            <a className="no-underline text-slate-400 hover:text-slate-300" href={`#${t}`}>{tree[t].name}</a>
             {!!Object.keys(tree[t].subtitles).length &&
               <ul className="flex flex-col gap-2 px-2 py-1">
                 {Object.keys(tree[t].subtitles).map(s =>
                   <li className="text-xs">
-                    <a className="no-underline text-slate-400 hover:text-slate-700" href={`#${s}`}>{tree[t].subtitles[s].name}</a>
+                    <a className="no-underline text-slate-400 hover:text-slate-300" href={`#${s}`}>{tree[t].subtitles[s].name}</a>
                   </li>
                 )}
               </ul>
