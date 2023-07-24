@@ -15,13 +15,16 @@ export default ({ projects }: {
         <p className="text-6xl xl:text-8xl font-black tracking-wide text-teal-300">HI!</p>
         <p className="text-xl xl:text-6xl font-semibold">I'm acha, <span className="font-black text-teal-300">web</span> developer :D</p>
       </div>
-      {/* <Link className="rounded-full px-8 p-1 border border-white no-underline hover:bg-white hover:bg-opacity-20" href={"/cv"}>Ver CV</Link> */}
     </div>
     <div className="flex flex-col gap-8 py-8 items-center bg-slate-800 z-10">
       {/* <p className="text-slate-900 font-black drop-shadow-[0_0px_10px_rgba(255,255,255,0.25)] text-4xl xl:text-8xl opacity-[0.05] hover:text-black">Projects</p> */}
       {projects.map(project =>
         <ProjectComponent {...project} />
       )}
+    </div>
+    <div className="flex flex-col gap-8 py-8 items-center bg-slate-800 z-10">
+      <p className="font-semibold text-2xl xl:text-4xl"><span className="font-semibold text-teal-300">¿Interesado?</span> Mirate mi CV :D</p>
+      <Link className="rounded-full px-8 p-1 border border-white no-underline hover:bg-white hover:bg-opacity-20" href={"/cv"}>Ver CV</Link>
     </div>
   </HomeLayout>
 }
