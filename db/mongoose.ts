@@ -5,7 +5,9 @@ const connectDB = (handler: any) => async (req: any, res: any) => {
   if (mongoose.connections[0].readyState) {
     return handler(req, res);
   }
-  await mongoose.connect(process.env.MONGOOSE_TOKEN);
+  await mongoose.connect(process.env.MONGOOSE_TOKEN, {
+    dbName: "acha"
+  });
   return handler(req, res);
 };
 
