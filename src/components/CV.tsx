@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import KnowledgeLevel from "../../src/components/KnowledgeLevel";
-import DefaultSeo from "src/defaultSeo";
+import KnowledgeLevel from "./KnowledgeLevel";
+// import DefaultSeo from "src/defaultSeo"; 
 
 const CVSection = ({ id, name, children }: {
   id: string;
@@ -30,7 +30,11 @@ interface Subtitle {
   }
 }
 
-export default () => {
+export default ({
+  projects = []
+}: {
+  projects: any[]
+}) => {
 
   const [tree, setTree] = useState<Tree>()
 
@@ -56,14 +60,14 @@ export default () => {
     setTree(_tree)
   }, [])
 
-  return <div className="flex min-h-screen py-8 text-xs xl:text-base">
-    <DefaultSeo />
+  return <div className="flex min-h-screen py-8 text-xs xl:text-base w-full">
+    {/* <DefaultSeo /> */}
     <div className="cv flex flex-col w-full md:w-4/5 h-full">
       <p className="w-[95%] text-center text-xs md:hidden text-red-400 bg-red-200 px-2 p-1 rounded mx-auto mb-4 bg-opacity-30">Not Optimized for Mobile</p>
       <CVSection id="details" name="Details">
         <p className="mb-[2%] text-sm md:text-base text-slate-400">Bogotá, Colombia | acha@achalogy.dev</p>
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
-        <p className="text-slate-400">A 17 years old autodidact Software/Web Developer from Colombia. PUJ Student.</p>
+        <p className="text-slate-400">A 18 years old autodidact Software/Web Developer from Colombia. PUJ Student.</p>
       </CVSection>
       <CVSection id="education" name="Education">
         <div>
@@ -95,12 +99,14 @@ export default () => {
           <div className="p-2">
             <KnowledgeLevel name="Javascript" level={4} />
             <KnowledgeLevel name="Typescript" level={4} />
-            <KnowledgeLevel name="Python" level={2} />
-            <KnowledgeLevel name="React JS / Next JS" level={3} />
-            <KnowledgeLevel name="React JS Native" level={1} />
-            <KnowledgeLevel name="Tailwind CSS" level={2} />
+            <KnowledgeLevel name="C++" level={1} />
+            {/* <KnowledgeLevel name="Python" level={2} /> */}
+            {/* <KnowledgeLevel name="React JS Native" level={1} /> */}
             <KnowledgeLevel name="Express JS" level={2} />
             <KnowledgeLevel name="MongoDB" level={1} />
+            <KnowledgeLevel name="Tailwind CSS" level={2} />
+            <KnowledgeLevel name="Astro" level={3} />
+            <KnowledgeLevel name="React JS" level={3} />
           </div>
         </div>
         <div className="flex flex-col gap-1">
@@ -125,28 +131,17 @@ export default () => {
           <h3 className="text-2xl font-semibold mb-1" id="webpage">Personal Page</h3>
           <p className="p-2">I made this personal web page from scratch, You can check the repo in <a href="https://github.com/Achalogy/achaweb" target="_blank">Github</a>.</p>
         </div>
-        <div className="flex flex-col gap-1">
-          <h3 className="text-2xl font-semibold mb-1" id="adventjs2022">Advent JS 2022 - Explicado para principiantes</h3>
-          <div className="flex flex-col gap-3 md:gap-2 p-2 text-base xl:text-lg">
-            <p>Explanations of technical programming exercises, step by step and in video.</p>
+        {projects.map(p => {
+          const { frontmatter } = p
 
-            <p>The main idea was to create a Github repository where the answers to technical programming challenges would be published, but with an educational technical challenges, but with an educational approach, for people who are just starting to learn learning JavaScript, algorithms or just want to understand the solutions to them. solutions to them. Currently, the project is scaling up to an audiovisual medium and the explanations are being published on YouTube. explanations on YouTube.</p>
-
-            <p>You can check it here: <a href="https://github.com/achalogy/advent-js-2022" target="_blank">AdventJS repo</a>.</p>
+          return <div key={frontmatter.name}>
+            <h3 className="text-2xl font-semibold mb-1" id={frontmatter.name}>{frontmatter.name}</h3>
+            <div className="markdw" dangerouslySetInnerHTML={{
+              __html: p.content
+            }}>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-1">
-          <h3 className="text-2xl font-semibold mb-1" id="icfes">IcfesU</h3>
-          <div className="flex flex-col gap-4 md:gap-3 p-2 text-base xl:">
-            <p>Interactive platform to prepare for the university entrance exam in Colombia called ICFES.</p>
-
-            <p>The objective of this platform is to encourage the preparation of 11th grade students, who are about to complete their high school studies and will soon enter university.</p>
-
-            <p>Although the main focus of the website is the ICFES, it has texts, materials, tests and more to practice many of the important skills of Mathematics, English, Critical Reading, Social and Natural Sciences, as well as subtopics of these subjects. Among some of these is the preparation for the National University exam.</p>
-
-            <p>You can check it here: <a href="https://icfesu.com/" target="_blank">IcfesU</a>.</p>
-          </div>
-        </div>
+        })}
       </CVSection>
     </div >
 

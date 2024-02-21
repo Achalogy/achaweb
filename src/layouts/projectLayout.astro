@@ -1,0 +1,32 @@
+---
+import { IconChevronLeft } from "@tabler/icons-react";
+import Base from "./Base.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<script>
+  for (let a of document.querySelectorAll(".markdw a")) {
+    a.setAttribute("target", "_blank");
+    //@ts-expect-error
+    a.style.setProperty("color", "#38bdf8");
+    //@ts-expect-error
+    a.style.setProperty("text-decoration", "underline");
+  }
+</script>
+
+<Base title={frontmatter.name} description={frontmatter.description}>
+  <div class="flex flex-col mt-[8vh] py-4">
+    <div class="flex flex-col gap-4 w-full xl:w-2/3 mx-auto text-xl">
+      <div class="font-semibold bg-slate-200 dark:bg-slate-800 p-4 rounded-md">
+        <a href="javascript:history.back()" class="flex items-center">
+          <IconChevronLeft stroke={3} size={25} />
+          Volver
+        </a>
+      </div>
+      <div class="flex flex-col gap-3 markdw">
+        <slot />
+      </div>
+    </div>
+  </div>
+</Base>

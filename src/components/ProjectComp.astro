@@ -1,0 +1,44 @@
+---
+import { IconHourglass } from "@tabler/icons-react";
+
+const { md } = Astro.props;
+let image = { src: "" };
+
+const post = md.frontmatter;
+
+try {
+  image = (await import(post.image)).default;
+} catch {}
+---
+
+<a
+  href={md.url}
+  class="flex flex-col xl:flex-row items-center gap-8 p-8 bg-slate-200 dark:bg-slate-900 rounded-md"
+>
+  <div class="w-full xl:h-[30vh] xl:w-auto aspect-video bg-black rounded-md">
+    <img
+      src={image.src}
+      alt=""
+      class="w-full h-full object-cover rounded-md overflow-hidden"
+    />
+  </div>
+  <div class="flex flex-col gap-2 xl:h-[25vh]">
+    <h3 class="font-semibold text-2xl xl:text-3xl">{post.name}</h3>
+    <p class="xl:text-md">{post.description}</p>
+    <div class="mt-2 flex gap-3 text-teal-500 dark:text-white">
+      <div
+        class="flex items-center gap-2 text-[.5rem] xl:text-xs rounded-full border border-teal-300 dark:border-slate-700 px-2 p-1"
+      >
+        <IconHourglass stroke={1} size={15} />
+        <p>{post.hours} horas</p>
+      </div>
+      {
+        post.tags.map((t) => (
+          <div class="flex items-center gap-2 text-[.5rem] xl:text-xs rounded-full border border-teal-300 dark:border-slate-700 px-2 p-1">
+            <p class="text-center xl:text-start">{t}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</a>

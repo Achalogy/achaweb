@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import CV from "../components/CV";
+
+const projects = (await Astro.glob("../pages/projects/*.md")).map((x) => ({
+  ...x,
+  content: x.compiledContent(),
+}));
+---
+
+<Base>
+  <div class="py-12">
+    <CV client:load projects={projects} />
+  </div>
+</Base>

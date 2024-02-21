@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectComp from "../components/ProjectComp.astro";
+import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandLinkedin } from "@tabler/icons-react";
+
+const projects = await Astro.glob("./projects/*.md");
+---
+
+<Base>
+  <div class="h-[60vh] xl:h-screen"></div>
+  <div
+    class="flex items-center justify-center fixed top-0 h-[60vh] xl:h-screen w-full"
+  >
+    <div class="flex flex-col gap-3 w-[80%] xl:w-auto mx-auto">
+      <h2 class="text-6xl xl:text-8xl font-semibold text-teal-300">HI!</h2>
+      <h1 class="text-4xl xl:text-6xl">
+        I'm <span class="font-semibold text-teal-300">Acha</span>, web developer
+        :D
+      </h1>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-2 bg-white dark:bg-slate-800 z-20 w-[100vw]">
+    <div class="flex flex-col gap-5 w-[95vw] xl:w-[85vw] mx-auto p-4">
+      {projects.map((p) => <ProjectComp md={p} />)}
+    </div>
+
+    <footer class="flex flex-col gap-2 mt-8">
+      <div class="flex flex-col gap-3 my-10 p-8 xl:p-0">
+        <h4 class="text-4xl text-center">
+          <span class="font-semibold text-teal-300">¿Interesado?</span> Mirate mi
+          CV :D
+        </h4>
+        <a
+          href="/cv"
+          class="mx-auto px-8 p-2 rounded-md border-slate-600 border">Ver CV</a
+        >
+      </div>
+
+      <div
+        class="flex flex-col gap-8 items-center justify-center p-12 bg-slate-100 dark:bg-slate-900"
+      >
+        <p>¿Tu que pones en el footer? 🤔</p>
+        <div class="flex gap-7 items-center text-xl text-slate-500">
+          <a
+            href="https://github.com/achalogy"
+            target="_blank"
+            class="flex gap-2"
+          >
+            <IconBrandGithub />
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/achalogy"
+            target="_blank"
+            class="flex gap-2"
+          >
+            <IconBrandLinkedin />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</Base>

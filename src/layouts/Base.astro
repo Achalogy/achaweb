@@ -1,0 +1,125 @@
+---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+import { IconSun } from "@tabler/icons-react";
+import { IconMoon } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandLinkedin } from "@tabler/icons-react";
+
+const { title, desc } = Astro.props;
+const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
+---
+
+<html lang="es" about="acha">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title ?? "Achalogy"}</title>
+    <meta
+      name="description"
+      content={desc ??
+        "A 18 years old autodidact Software/Web Developer from Colombia. PUJ Student."}
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico?v=16" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css"
+      integrity="sha512-XgCw4Srl8lC1ECwcaHwAU0WnxQwHkqmInzg9wJLtGB7DRuMaXPuK2k9WJ2AwRDGdrgK9eJpZl2hUlLi2WQssmw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <ViewTransitions />
+  <body>
+    <script is:inline>
+      function changeTheme() {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; theme=`);
+        const theme = parts.pop().split(";").shift();
+        const nTheme = theme == "dark" ? "light" : "dark";
+        document.cookie = `theme=${nTheme}; expires=${new Date(Date.now() + 10e9).toUTCString()}; path=/`;
+        window.location.reload();
+      }
+    </script>
+
+    <main class={themeCookie}>
+      <div
+        class={`flex flex-col min-h-screen bg-white dark:bg-slate-800 dark:text-white`}
+      >
+        <div
+          class="fixed top-0 z-30 w-full select-none p-4 flex justify-between items-center px-[5%] bg-slate-100 dark:bg-slate-900 text-dark"
+        >
+          <a class="font-semibold text-xl xl:text-3xl" href="/">Achalogy</a>
+          <div class="flex gap-7 items-center text-xl text-slate-500">
+            <a
+              href="https://github.com/achalogy"
+              target="_blank"
+              class="flex gap-2"
+            >
+              <IconBrandGithub />
+              <p class="hidden xl:flex">GitHub</p>
+            </a>
+            <a
+              href="https://linkedin.com/in/achalogy"
+              target="_blank"
+              class="flex gap-2"
+            >
+              <IconBrandLinkedin />
+              <p class="hidden xl:flex">LinkedIn</p>
+            </a>
+          </div>
+          <a href="" onclick="changeTheme()" class="cursor-pointer">
+            {themeCookie == "dark" ? <IconSun /> : <IconMoon />}
+          </a>
+        </div>
+        <slot />
+      </div>
+
+      <style is:global>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        *::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        * {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+          font-family: "hack";
+        }
+
+        body {
+          background-color: white;
+        }
+
+        input {
+          @apply rounded-md outline-none px-3 p-2;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        th,
+        td {
+          @apply border border-black dark:border-white p-1;
+        }
+
+        blockquote {
+          @apply bg-slate-100 dark:bg-slate-800 border-l-4 border-l-red-500 p-2 rounded-md;
+        }
+
+        code {
+          @apply px-2 rounded-md border border-slate-300 dark:border-slate-500;
+        }
+      </style>
+    </main>
+  </body>
+
+
+</html>
