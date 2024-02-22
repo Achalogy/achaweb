@@ -11,6 +11,7 @@ const image = (
     "../../assets/*.{jpeg,jpg,png,gif,webp}"
   )
 ).find((i) => {
+  console.log(i.default.src.match(/[^\.\/]+\.webp/)?.at(0) ?? "");
   return (
     (i.default.src.match(/[^\.\/]+\.webp/)?.at(0) ?? "") ==
     (post.image.match(/[^\.\/]+\.webp/)?.at(0) ?? "")
