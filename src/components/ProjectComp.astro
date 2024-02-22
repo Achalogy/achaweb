@@ -6,13 +6,16 @@ const { md } = Astro.props;
 
 const post = md.frontmatter;
 
-let image = { src: "" };
-
-try {
-  image = (await import(post.image)).default;
-  // console.log(image);
-} catch {}
-
+const image = (
+  await Astro.glob<{ default: ImageMetadata }>(
+    "../../assets/*.{jpeg,jpg,png,gif,webp}"
+  )
+).find((i) => {
+  return (
+    (i.default.src.match(/[^\.\/]+\.webp/)?.at(0) ?? "") ==
+    (post.image.match(/[^\.\/]+\.webp/)?.at(0) ?? "")
+  );
+})?.default ?? { src: "" };
 ---
 
 <a
