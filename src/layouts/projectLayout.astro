@@ -5,10 +5,12 @@ import Base from "./Base.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<script>
-  for (let a of document.querySelectorAll(".markdw a")) {
-    a.setAttribute("target", "_blank");
-  }
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    for (let a of document.querySelectorAll(".markdw a")) {
+      a.setAttribute("target", "_blank");
+    }
+  });
 </script>
 
 <Base title={frontmatter.name} description={frontmatter.description}>
