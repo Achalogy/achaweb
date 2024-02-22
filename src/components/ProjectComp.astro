@@ -12,8 +12,8 @@ const image = (
   )
 ).find(
   (i) =>
-    i.default.src.match(/assets[^\.]+\.webp/)[0] ==
-    post.image.match(/assets[^\.]+\.webp/)[0]
+    (i.default.src.match(/assets[^\.]+\.webp/)?.at(0) ?? "") ==
+    (post.image.match(/assets[^\.]+\.webp/)?.at(0) ?? "")
 )?.default ?? { src: "" };
 ---
 
