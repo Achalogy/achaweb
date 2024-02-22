@@ -1,14 +1,20 @@
 ---
 import { IconHourglass } from "@tabler/icons-react";
+import { Image } from "astro:assets";
 
 const { md } = Astro.props;
-let image = { src: "" };
 
 const post = md.frontmatter;
 
-try {
-  image = (await import(post.image)).default;
-} catch {}
+const image = (
+  await Astro.glob<{ default: ImageMetadata }>(
+    "../../assets/*.{jpeg,jpg,png,gif,webp}"
+  )
+).find(
+  (i) =>
+    i.default.src.match(/assets[^\.]+\.webp/)[0] ==
+    post.image.match(/assets[^\.]+\.webp/)[0]
+)?.default ?? { src: "" };
 ---
 
 <a
@@ -21,6 +27,7 @@ try {
       alt=""
       class="w-full h-full object-cover rounded-md overflow-hidden"
     />
+    <!-- <Image src={images[image.src]} /> -->
   </div>
   <div class="flex flex-col gap-2 xl:h-[25vh]">
     <h3 class="font-semibold text-2xl xl:text-3xl">{post.name}</h3>
