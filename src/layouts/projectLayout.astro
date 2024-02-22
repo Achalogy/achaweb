@@ -8,10 +8,6 @@ const { frontmatter } = Astro.props;
 <script>
   for (let a of document.querySelectorAll(".markdw a")) {
     a.setAttribute("target", "_blank");
-    //@ts-expect-error
-    a.style.setProperty("color", "#38bdf8");
-    //@ts-expect-error
-    a.style.setProperty("text-decoration", "underline");
   }
 </script>
 
