@@ -13,12 +13,12 @@ const image = (
 ).find((i) => {
   console.log(i);
   console.log(
-    (i.default.src.match(/[^\/]+\.webp/)?.at(0) ?? "").replaceAll(/\..+\./g, "")
+    (i.default.src.match(/[^\/]+\.webp/)?.at(0) ?? "").replaceAll(/\..+\./g, ".")
   );
   return (
     (i.default.src.match(/[^\/]+\.webp/)?.at(0) ?? "").replaceAll(
       /\..+\./g,
-      ""
+      "."
     ) == (post.image.match(/[^\/]+\.webp/)?.at(0) ?? "")
   );
 })?.default ?? { src: "" };
