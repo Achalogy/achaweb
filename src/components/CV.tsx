@@ -69,6 +69,10 @@ export default ({
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
         <p className="text-slate-400">A 18 years old autodidact Software/Web Developer from Colombia. PUJ Student.</p>
       </CVSection>
+      <CVSection id="contact" name="Contacto">
+        <p className="text-black">acha@achalogy.dev | achalogy@gmail.com</p>
+        <p className="text-black">Cel. +57 314 8527241</p>
+      </CVSection>
       <CVSection id="education" name="Education">
         <div>
           <h3 id="undergraduate" className="text-base xl: md:text-2xl font-semibold mb-1">Undergraduate - Systems Engineering, Pontificia Universidad Javeriana</h3>
@@ -78,7 +82,7 @@ export default ({
           </div>
         </div>
         <div>
-          <h3 id="bachelor" className="text-base xl: md:text-2xl font-semibold mb-1">Bachiller, Salesiano Maldonado, Tunja</h3>
+          <h3 id="bachelor" className="text-base xl: md:text-2xl font-semibold mb-1">Bachelor, Salesiano Maldonado, Tunja</h3>
           <p className="text-slate-400 font-semibold p-2 text-sm md:text-base">2016 - 2022</p>
         </div>
         <div>
@@ -99,7 +103,7 @@ export default ({
           <div className="p-2">
             <KnowledgeLevel name="Javascript" level={4} />
             <KnowledgeLevel name="Typescript" level={4} />
-            <KnowledgeLevel name="C++" level={1} />
+            <KnowledgeLevel name="C++" level={3} />
             {/* <KnowledgeLevel name="Python" level={2} /> */}
             {/* <KnowledgeLevel name="React JS Native" level={1} /> */}
             <KnowledgeLevel name="Express JS" level={2} />
