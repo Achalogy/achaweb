@@ -12,10 +12,10 @@ const image = (
   )
 ).find((i) => {
   return (
-    (i.default.src.match(/[^\/]+\.webp/)?.at(0) ?? "").replaceAll(
+    (i.default.src?.match(/[^\/]+\.webp/)?.at(0) ?? "").replaceAll(
       /\..+\./g,
       "."
-    ) == (post.image.match(/[^\/]+\.webp/)?.at(0) ?? "")
+    ) == (post.image?.match(/[^\/]+\.webp/)?.at(0) ?? "")
   );
 })?.default ?? { src: "" };
 ---
@@ -43,7 +43,7 @@ const image = (
         <p>{post.hours} horas</p>
       </div>
       {
-        post.tags.map((t) => (
+        post.tags?.map((t) => (
           <div class="flex items-center gap-2 text-[.5rem] xl:text-xs rounded-full border border-teal-300 dark:border-slate-700 px-2 p-1">
             <p class="text-center xl:text-start">{t}</p>
           </div>
