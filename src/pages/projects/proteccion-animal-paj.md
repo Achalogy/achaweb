@@ -1,11 +1,11 @@
 ---
-name: "Protección Animal Javeriana"
-description: "Descubre la pasión por la protección animal en la Pontificia Universidad Javeriana. Nuestro grupo de estudiantes comprometidos se dedica desde 2008 a cuidar y proteger a los adorables gatos del campus y generar conciencia sobre la importancia de preservar la vida animal."
-hours: "10 Horas"
-tags: ["Proyecto Personal", "Astro", "Javeriana"]
-image: "../../../assets/prot-animal-javeriana.webp"
+name: “Javeriana Animal Protection”.
+description: “Discover the passion for animal protection at Pontificia Universidad Javeriana. Our group of committed students has been dedicated since 2008 to care for and protect the adorable cats on campus and raise awareness about the importance of preserving animal life.”
+hours: “10 Hours”
+tags: [“Personal Project”, “Astro”, “Javeriana”].
+image: “../../../assets/prot-animal-javeriana.webp”
 
-layout: "../../layouts/projectLayout.astro"
+layout: “../../layouts/projectLayout.astro”
 ---
 
 As the current coordinator of the animal protection group, I've taken the initiative to establish an online platform that serves as a comprehensive showcase of the valuable work undertaken by our group.
