@@ -62,7 +62,7 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
             <a
               href="https://github.com/achalogy"
               target="_blank"
-              class="flex gap-2"
+              class="flex gap-2 px-2 p-1 items-center justify-center rounded-full hover:bg-gray-950 dark:hover:bg-gray-100 hover:bg-opacity-5 dark:hover:bg-opacity-5"
             >
               <IconBrandGithub />
               <p class="hidden xl:flex">GitHub</p>
@@ -70,13 +70,17 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
             <a
               href="https://linkedin.com/in/achalogy"
               target="_blank"
-              class="flex gap-2"
+              class="flex gap-2 px-2 p-1 items-center justify-center rounded-full hover:bg-gray-950 dark:hover:bg-gray-100 hover:bg-opacity-5 dark:hover:bg-opacity-5"
             >
               <IconBrandLinkedin />
               <p class="hidden xl:flex">LinkedIn</p>
             </a>
           </div>
-          <a href="" onclick="changeTheme()" class="cursor-pointer">
+          <a
+            href=""
+            onclick="changeTheme()"
+            class="cursor-pointer p-2 rounded-full aspect-square hover:bg-gray-950 dark:hover:bg-gray-100 hover:bg-opacity-5 dark:hover:bg-opacity-5"
+          >
             {themeCookie == "dark" ? <IconSun /> : <IconMoon />}
           </a>
         </div>
