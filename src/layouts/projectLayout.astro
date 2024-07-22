@@ -1,8 +1,22 @@
 ---
-import { IconChevronLeft } from "@tabler/icons-react";
 import Base from "./Base.astro";
 
 const { frontmatter } = Astro.props;
+
+const post = frontmatter;
+
+const image = (
+  await Astro.glob<{ default: ImageMetadata }>(
+    "../../assets/*.{jpeg,jpg,png,gif,webp}"
+  )
+).find((i) => {
+  return (
+    (i.default.src?.match(/[^\/]+\.webp/)?.at(0) ?? "").replaceAll(
+      /\..+\./g,
+      "."
+    ) == (post.image?.match(/[^\/]+\.webp/)?.at(0) ?? "")
+  );
+})?.default ?? { src: "" };
 ---
 
 <script is:inline>
@@ -22,7 +36,7 @@ const { frontmatter } = Astro.props;
           Volver
         </a>
       </div> -->
-      <img src={frontmatter.image} class="rounded">
+      <img src={image.src} class="rounded" />
       <div class="flex flex-col gap-4 markdw text-base">
         <slot />
       </div>
