@@ -1,11 +1,11 @@
 ---
-name: “IcfesU”
-description: “This website has been created from scratch to contribute to the preparation of the ICFES exam. It includes database, a back-end, a front-end, and marketing to promote the website. Over 200 hours as of July 2023.”
-hours: “+200”
-tags: [“Personal Project”, “Education”].
-image: “../../../assets/icfesu.webp”
+name: “IcfesU"
+description: “This website has been created from scratch to contribute to the preparation of the ICFES exam. It includes database, a back-end, a front-end, and marketing to promote the website. Over 200 hours as of July 2023."
+hours: “+200"
+tags: [“Personal Project", “Education"].
+image: “../../../assets/icfesu.webp"
 
-layout: “../../layouts/projectLayout.astro”
+layout: “../../layouts/projectLayout.astro"
 ---
 
 Interactive platform to prepare for the university entrance exam in Colombia called ICFES.

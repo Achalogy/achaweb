@@ -1,11 +1,11 @@
 ---
-name: “Advent JS 2022 for beginners”.
-description: “Advent Js 2022 challenges explained for beginners”.
-hours: “+65”
-tags: [“Personal Project”, “YouTube”]
-image: “../../../assets/advent-js-2022.webp”
+name: “Advent JS 2022 for beginners".
+description: “Advent Js 2022 challenges explained for beginners".
+hours: “+65"
+tags: [“Personal Project", “YouTube"]
+image: “../../../assets/advent-js-2022.webp"
 
-layout: “../../layouts/projectLayout.astro”
+layout: “../../layouts/projectLayout.astro"
 ---
 
 Explanations of technical programming exercises, step by step and in video.
