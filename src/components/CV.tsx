@@ -67,11 +67,28 @@ export default ({
       <CVSection id="details" name="Details">
         <p className="mb-[2%] text-sm md:text-base text-slate-400">Bogotá, Colombia | acha@achalogy.dev</p>
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
-        <p className="text-slate-400">A 18 years old autodidact Software/Web Developer from Colombia. PUJ Student.</p>
+        <p className="text-slate-400">A 18 years old self-taught Software/Web Developer from Colombia. PUJ Student.</p>
       </CVSection>
-      <CVSection id="contact" name="Contacto">
+      <CVSection id="contact" name="Contact">
         <p className="text-black">acha@achalogy.dev | achalogy@gmail.com</p>
-        <p className="text-black">Cel. +57 314 8527241</p>
+        {/* <p className="text-black">Cel. +57 </p> */}
+      </CVSection>
+      <CVSection id="projects" name="Projects">
+        <div>
+          <h3 className="text-2xl font-semibold mb-1" id="webpage">Personal Page</h3>
+          <p className="p-2">I made this personal web page from scratch, You can check the repo in <a href="https://github.com/Achalogy/achaweb" target="_blank">Github</a>.</p>
+        </div>
+        {projects.map(p => {
+          const { frontmatter } = p
+
+          return <div key={frontmatter.name}>
+            <h3 className="text-2xl font-semibold mb-1" id={frontmatter.name}>{frontmatter.name}</h3>
+            <div className="markdw" dangerouslySetInnerHTML={{
+              __html: p.content
+            }}>
+            </div>
+          </div>
+        })}
       </CVSection>
       <CVSection id="education" name="Education">
         <div>
@@ -82,7 +99,7 @@ export default ({
           </div>
         </div>
         <div>
-          <h3 id="bachelor" className="text-base xl: md:text-2xl font-semibold mb-1">Bachelor, Salesiano Maldonado, Tunja</h3>
+          <h3 id="bachelor" className="text-base xl: md:text-2xl font-semibold mb-1">High School, Salesiano Maldonado, Tunja</h3>
           <p className="text-slate-400 font-semibold p-2 text-sm md:text-base">2016 - 2022</p>
         </div>
         <div>
@@ -108,7 +125,7 @@ export default ({
             {/* <KnowledgeLevel name="React JS Native" level={1} /> */}
             <KnowledgeLevel name="Express JS" level={2} />
             <KnowledgeLevel name="MongoDB" level={1} />
-            <KnowledgeLevel name="Tailwind CSS" level={2} />
+            <KnowledgeLevel name="Tailwind CSS" level={3} />
             <KnowledgeLevel name="Astro" level={3} />
             <KnowledgeLevel name="React JS" level={3} />
           </div>
@@ -118,6 +135,7 @@ export default ({
           <div className="p-2">
             <KnowledgeLevel name="Spanish" level={4} />
             <KnowledgeLevel name="English" level={3} />
+            <KnowledgeLevel name="French" level={1} />
           </div>
         </div>
         <div className="flex flex-col gap-1">
@@ -129,23 +147,6 @@ export default ({
             <KnowledgeLevel name="Time managment" level={3} />
           </div>
         </div>
-      </CVSection>
-      <CVSection id="projects" name="Projects">
-        <div>
-          <h3 className="text-2xl font-semibold mb-1" id="webpage">Personal Page</h3>
-          <p className="p-2">I made this personal web page from scratch, You can check the repo in <a href="https://github.com/Achalogy/achaweb" target="_blank">Github</a>.</p>
-        </div>
-        {projects.map(p => {
-          const { frontmatter } = p
-
-          return <div key={frontmatter.name}>
-            <h3 className="text-2xl font-semibold mb-1" id={frontmatter.name}>{frontmatter.name}</h3>
-            <div className="markdw" dangerouslySetInnerHTML={{
-              __html: p.content
-            }}>
-            </div>
-          </div>
-        })}
       </CVSection>
     </div >
 
