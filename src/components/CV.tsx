@@ -67,10 +67,10 @@ export default ({
       <CVSection id="details" name="Details">
         <p className="mb-[2%] text-sm md:text-base text-slate-400">Bogotá, Colombia | acha@achalogy.dev</p>
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
-        <p className="text-slate-400">A 18 years old self-taught Software/Web Developer from Colombia. PUJ Student.</p>
+        <p className="text-slate-400">A 18 years old self-taught Software/Web Developer from Colombia. PUJ Student 4th Semester.</p>
       </CVSection>
       <CVSection id="contact" name="Contact">
-        <p className="text-black">acha@achalogy.dev | achalogy@gmail.com</p>
+        <p className="text-black dark:text-slate-400">acha@achalogy.dev | achalogy@gmail.com</p>
         {/* <p className="text-black">Cel. +57 </p> */}
       </CVSection>
       <CVSection id="projects" name="Projects">
@@ -120,7 +120,7 @@ export default ({
           <div className="p-2">
             <KnowledgeLevel name="Javascript" level={4} />
             <KnowledgeLevel name="Typescript" level={4} />
-            <KnowledgeLevel name="C++" level={3} />
+            <KnowledgeLevel name="C++" level={2} />
             {/* <KnowledgeLevel name="Python" level={2} /> */}
             {/* <KnowledgeLevel name="React JS Native" level={1} /> */}
             <KnowledgeLevel name="Express JS" level={2} />
@@ -133,9 +133,9 @@ export default ({
         <div className="flex flex-col gap-1">
           <h3 className="text-2xl font-semibold mb-1" id="langs">Languages</h3>
           <div className="p-2">
-            <KnowledgeLevel name="Spanish" level={4} />
+            <KnowledgeLevel customText="Native" name="Spanish" level={4} />
             <KnowledgeLevel name="English" level={3} />
-            <KnowledgeLevel name="French" level={1} />
+            {/* <KnowledgeLevel name="French" level={1} /> */}
           </div>
         </div>
         <div className="flex flex-col gap-1">
