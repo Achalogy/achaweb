@@ -80,7 +80,12 @@ export default ({
         </div>
         <div>
           <h3 className="text-2xl font-semibold mb-1" id="webpage">Personal Page</h3>
-          <p className="p-2">I made this personal web page from scratch, You can check the repo in <a href="https://github.com/Achalogy/achaweb" target="_blank">Github</a>.</p>
+          <p className="p-2">
+            I built this personal website from scratch. You can check out the repo on{" "}
+            <a href="https://github.com/Achalogy/achaweb" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>.
+          </p>
         </div>
         {projects.map(p => {
           const { frontmatter } = p
