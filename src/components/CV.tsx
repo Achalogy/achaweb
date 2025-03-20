@@ -65,12 +65,12 @@ export default ({
     <div className="cv flex flex-col w-full md:w-4/5 h-full">
       <p className="w-[95%] text-center text-xs md:hidden text-red-400 bg-red-200 px-2 p-1 rounded mx-auto mb-4 bg-opacity-30">Not Optimized for Mobile</p>
       <CVSection id="details" name="Details">
-        <p className="mb-[2%] text-sm md:text-base text-slate-400">Bogotá, Colombia | acha@achalogy.dev</p>
+        <p className="mb-[2%] text-sm md:text-base text-slate-400">Bogotá, Colombia | achalogy@gmail.com</p>
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
         <p className="text-slate-400">A 19 years old self-taught Software/Web Developer from Colombia. PUJ Student 4th Semester.</p>
       </CVSection>
       <CVSection id="contact" name="Contact">
-        <p className="text-black dark:text-slate-400">acha@achalogy.dev | achalogy@gmail.com</p>
+        <p className="text-black dark:text-slate-400">achalogy@gmail.com</p>
         {/* <p className="text-black">Cel. +57 </p> */}
       </CVSection>
       <CVSection id="projects" name="Projects">
