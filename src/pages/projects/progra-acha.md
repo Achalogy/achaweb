@@ -12,4 +12,4 @@ Simple blog-like page, used in some classes at the Universidad Javeriana to find
 
 Primarily, the website relies on Astro and Markdown for its functionality and content creation. Astro is utilized for building efficient and dynamic web components, while Markdown serves as the preferred format for creating and structuring textual content.
 
-Check it here: [Prog Acha](https://p.achalogy.dev)
+Check it here: [Prog Acha](https://progra-acha.site)
