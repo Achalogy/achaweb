@@ -67,13 +67,17 @@ export default ({
       <CVSection id="details" name="Details">
         <p className="mb-[2%] text-sm md:text-base text-slate-400">Bogotá, Colombia | acha@achalogy.dev</p>
         <p className="text-2xl md:text-4xl font-bold">Miguel Francisco Vargas Contreras</p>
-        <p className="text-slate-400">A 18 years old self-taught Software/Web Developer from Colombia. PUJ Student 4th Semester.</p>
+        <p className="text-slate-400">A 19 years old self-taught Software/Web Developer from Colombia. PUJ Student 4th Semester.</p>
       </CVSection>
       <CVSection id="contact" name="Contact">
         <p className="text-black dark:text-slate-400">acha@achalogy.dev | achalogy@gmail.com</p>
         {/* <p className="text-black">Cel. +57 </p> */}
       </CVSection>
       <CVSection id="projects" name="Projects">
+        <div>
+          <h3 className="text-2xl font-semibold mb-1" id="webpage">Current Proyects</h3>
+          <p className="p-2">Hey, what's up? I'm currently working on some test projects using TailwindCSS, Astro, TypeScript, Prisma, PostgreSQL, MongoDB, C#, Protobufs, NestJS, and ExpressJS. I'll be updating this page soon as I deploy my projects.</p>
+        </div>
         <div>
           <h3 className="text-2xl font-semibold mb-1" id="webpage">Personal Page</h3>
           <p className="p-2">I made this personal web page from scratch, You can check the repo in <a href="https://github.com/Achalogy/achaweb" target="_blank">Github</a>.</p>
