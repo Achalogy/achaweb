@@ -1,7 +1,7 @@
 {
   "functions": {
     "_render": {
-      "runtime": "nodejs"
+      "runtime": "nodejs@18"
     }
   }
 }
