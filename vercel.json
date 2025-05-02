@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "_render": {
+      "runtime": "nodejs"
+    }
+  }
+}
