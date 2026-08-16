@@ -4,6 +4,7 @@ description: "Platform for managing Pokémon TCG card collections"
 hours: "+25"
 tags: ["Personal Project", "Hobbie", "Full Stack"]
 image: "../../../assets/tcg-acha.png"
+active: false
 
 layout: "../../layouts/projectLayout.astro"
 ---

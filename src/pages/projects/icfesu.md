@@ -1,9 +1,10 @@
 ---
 name: "IcfesU"
-description: "This website has been created from scratch to contribute to the preparation of the ICFES exam. It includes a database, a back-end, a front-end, and marketing to promote the website. More than 200 hours as of July 2023."
+description: "This website was created from scratch to contribute to the preparation of the ICFES exam. It includes a database, a back-end, a front-end, and marketing to promote the website. More than 200 hours as of July 2023."
 hours: "+200"
 tags: ["Personal Project", "Education"]
 image: "../../../assets/icfesu.webp"
+active: true
 
 layout: "../../layouts/projectLayout.astro"
 ---
@@ -14,6 +15,8 @@ The objective of this platform is to encourage the preparation of 11th grade stu
 
 Although the main focus of the website is the ICFES, it has texts, materials, tests and more to practice many of the important skills of Mathematics, English, Critical Reading, Social and Natural Sciences, as well as subtopics of these subjects. Among some of these is the preparation for the National University exam.
 
-You can check it here: [IcfesU](https://icfesu.com).
+Currently not available.
 
-We're re transforming the website, check the progress here: [Preview](https://preview.achalogy.dev).
+<!--You can check it here: [IcfesU](https://icfesu.com).
+
+We're re transforming the website, check the progress here: [Preview](https://preview.achalogy.dev).-->

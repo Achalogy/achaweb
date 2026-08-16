@@ -4,6 +4,7 @@ description: "Development of exercises, workshops and tutorials designed to stre
 hours: "5 hours"
 tags: ["Personal Project", "Education", "Javeriana"]
 image: "../../../assets/prog-acha.webp"
+active: false
 
 layout: "../../layouts/projectLayout.astro"
 ---

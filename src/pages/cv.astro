@@ -2,10 +2,12 @@
 import Base from "../layouts/Base.astro";
 import CV from "../components/CV";
 
-const projects = (await Astro.glob("../pages/projects/*.md")).map((x) => ({
-  ...x,
-  content: x.compiledContent(),
-}));
+const projects = (await Astro.glob("../pages/projects/*.md"))
+  .map((x) => ({
+    ...x,
+    content: x.compiledContent(),
+  }))
+  .filter((x) => x.frontmatter.active);
 ---
 
 <Base>

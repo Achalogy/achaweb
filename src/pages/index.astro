@@ -4,7 +4,9 @@ import ProjectComp from "../components/ProjectComp.astro";
 import { IconBrandGithub } from "@tabler/icons-react";
 import { IconBrandLinkedin } from "@tabler/icons-react";
 
-const projects = await Astro.glob("./projects/*.md");
+const projects = (await Astro.glob("./projects/*.md")).filter(
+  (x) => x.frontmatter.active,
+);
 ---
 
 <Base>
@@ -29,8 +31,8 @@ const projects = await Astro.glob("./projects/*.md");
     <footer class="flex flex-col gap-2 mt-8">
       <div class="flex flex-col gap-3 my-10 p-8 xl:p-0">
         <h4 class="text-4xl text-center">
-          <span class="font-semibold text-teal-300">Interested?</span> Check out
-          my resume :D
+          <span class="font-semibold text-teal-300">Interested?</span> Check out my
+          resume :D
         </h4>
         <a
           href="/cv"
@@ -42,7 +44,9 @@ const projects = await Astro.glob("./projects/*.md");
       <div
         class="flex flex-col gap-8 items-center justify-center p-12 bg-slate-100 dark:bg-slate-900"
       >
-        <p class="text-center text-xl xl:text-2xl font-semibold">What do you put in the footer? 🤔</p>
+        <p class="text-center text-xl xl:text-2xl font-semibold">
+          What do you put in the footer? 🤔
+        </p>
         <div class="flex gap-7 items-center text-xl text-slate-500">
           <a
             href="https://github.com/achalogy"

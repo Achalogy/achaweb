@@ -4,6 +4,7 @@ description: "Discover the passion for animal protection at Pontificia Universid
 hours: "10 Hours"
 tags: ["Personal Project", "Astro", "Javeriana"]
 image: "../../../assets/prot-animal-javeriana.webp"
+active: true
 
 layout: "../../layouts/projectLayout.astro"
 ---

@@ -4,6 +4,7 @@ description: "Advent Js 2022 straights explained for beginners."
 hours: "+65"
 tags: ["Personal Project", "YouTube"]
 image: "../../../assets/advent-js-2022.webp"
+active: true
 
 layout: "../../layouts/projectLayout.astro"
 ---

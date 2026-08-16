@@ -7,13 +7,13 @@ const post = md.frontmatter;
 
 const image = (
   await Astro.glob<{ default: ImageMetadata }>(
-    "../../assets/*.{jpeg,jpg,png,gif,webp}"
+    "../../assets/*.{jpeg,jpg,png,gif,webp}",
   )
 ).find((i) => {
   return (
     (i.default.src?.match(/[^\/]+\.webp/)?.at(0) ?? "").replaceAll(
       /\..+\./g,
-      "."
+      ".",
     ) == (post.image?.match(/[^\/]+\.webp/)?.at(0) ?? "")
   );
 })?.default ?? { src: "" };
